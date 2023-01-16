@@ -1,23 +1,63 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../css/TestPage.css"
 
 function TestPage() {
 
-    let group1 = [{ color: "red", name: "Hartnäckig", id: 2 }, { color: "yellow", name: "Überzeugend", id: 1 }, { color: "blue", name: "Planend", id: 4 }, { color: "green", name: "Vermittelnd", id: 3 }]
+    const [responseGroup, setGroup] = useState([])
 
-    function showcards(gruppe) {
-        console.log(gruppe)
+    function buttonUp(gruppe, old_id) {
+        fetch("http://localhost:8080/api/users/buttonUP?" +
+            "userID=" + "user1" +
+            "&gruppe=" + gruppe +
+            "&id=" + old_id,
+            {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: "POST",
+            })
+            .then(function (res) { })
+            .catch(function (res) { })
+    }
+
+    function getGroup(gruppe) {
+        fetch("http://localhost:8080/api/users/getgroup?" +
+            "userID=" + "user1" +
+            "&gruppe=" + gruppe,
+            {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: "POST",
+            })
+            .then(res => res.json())
+            .then(res => {
+
+                setGroup(res)
+            })
+            .catch(function (res) { console.log(res) })
+
+        return responseGroup
+    }
+
+
+    function showcards(gruppe, searchedGroup) {
         return (
             gruppe.sort((a, b) => a.id > b.id ? -1 : 1).map(eigenschaft => {
                 return (
 
                     <div class="row">
-                        <div class="col" id="col-input">
-                            <a id="a-input">{eigenschaft.id}. {eigenschaft.name}</a>
+                        <div class="col" id="col-text">
+                            <a id="a-input">{eigenschaft.id}.</a>
                         </div>
-                        <div class="col" id="col-input">
-                            <button type="button"  class="float-end" id="btn-updown">▲</button>
-                            <button type="button"  class="float-end" id="btn-updown">▼</button>
+                        <div class="col" id="col-text">
+                            <a id="a-input">{eigenschaft.name}</a>
+                        </div>
+                        <div class="col" id="col-text">
+                            <button type="button" class="float-end" id="btn-updown" onClick={() => buttonUp(searchedGroup, eigenschaft.id)}>▲</button>
+                            <button type="button" class="float-end" id="btn-updown">▼</button>
                         </div>
                     </div>
 
@@ -27,6 +67,7 @@ function TestPage() {
     }
 
     return (
+
         <div class="container">
             <div class="row">
                 <div class="col col-6" id="col-info-1">
@@ -40,17 +81,40 @@ function TestPage() {
                     <h3>Gefällt dir der Test? Empfehle uns weiter!</h3>
                 </div>
             </div>
-            <div>
-            </div>
+
             <div class="row">
                 <div class="col" id="col-input">
-                    {showcards(group1)}
+                    {showcards(getGroup("group1"), "group1")}
                 </div>
                 <div class="col" id="col-input">
-                    {showcards(group1)}
+
                 </div>
                 <div class="col" id="col-input">
-                    {showcards(group1)}
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col" id="col-input">
+
+                </div>
+                <div class="col" id="col-input">
+
+                </div>
+                <div class="col" id="col-input">
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col" id="col-input">
+
+                </div>
+                <div class="col" id="col-input">
+
+                </div>
+                <div class="col" id="col-input">
+
                 </div>
             </div>
 

@@ -6,12 +6,12 @@ import TestPage from './pages/TestPage';
 
 import { Logging } from './context/context';
 import { Authentification } from './context/context';
+
 import LandingPage from './pages/LandingPage';
 
 function App() {
   const [userID, setUserID] = useState("")
   const [loggedIn, setLoggedIn] = useState(false)
-
   // get items from local storage
   useEffect(() => {
     const item = localStorage.getItem('userID');
@@ -38,6 +38,7 @@ function App() {
 
 
 
+
   return (
 
     <div className='App'>
@@ -51,9 +52,10 @@ function App() {
           <Route path="/" element={<LandingPage></LandingPage>}></Route>
           <Route path="/test" element={<TestPage></TestPage>}></Route>
         </Routes>
-
+        
       </Authentification.Provider>
       </Logging.Provider>
+
 
     </div>
 

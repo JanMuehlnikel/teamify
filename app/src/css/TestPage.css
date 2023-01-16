@@ -1,24 +1,46 @@
+.col  {
+    border-radius: 10px !important;
+}
+
 #col-info-1{
     width: 70%;
     background-color: #E6E6E6 !important;
     margin-right: 20px;
+    margin-left: 20px;
 }
 
 #col-info-2{
+    margin-right: 20px;
+    margin-left: 20px;
     background-color: #E6E6E6 !important;
     display: flex;
     align-items: center;
 }
 
 #col-input{
-    border-radius:10px!important;
     background-color: #67A97D;
-    margin-right: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
     margin-top: 20px;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     color: white;
     font-weight: bold;
+}
+
+#col-text{
+    background-color: #67A97D;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+#col-number{
+    background-color: white;
 }
 
 #btn-updown{
