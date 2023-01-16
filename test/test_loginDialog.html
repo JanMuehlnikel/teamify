@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="../lib/bootstrap.5.0.2.min.css" rel="stylesheet">
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="../lib/bootstrap.5.0.2.bundle.min.js"></script>
+    <script src="../lib/jquery-3.6.0.min.js"></script><!-- not required by bootstrap-->
+
+	<script src="../lib/elaspix_inputText.js"></script><!-- not required by bootstrap-->
+	<script src="../lib/elaspix_login.js"></script><!-- not required by bootstrap-->
+	<script src="../lib/elaspix_buttonBusy.js"></script><!-- not required by bootstrap-->
+
+
+   
+
+    <title>Test Login-Dialog</title>
+
+    <style>
+
+
+    </style>
+
+
+</head>
+<body>
+
+
+<div class="container mt-5">
+    <h1>Closure login</h1>
+	
+	<p>
+	Die login-Closure verwendet zwei Instanzen der inputText-Closure und einen Button mit zuschaltbarer Warte-Animation. Für eine Änderung der Beschriftung auf dem Button kann die login-Closure einfach editiert werden.
+	</p>
+	
+	<div class="row" id="stage">
+
+    </div>
+
+
+</div><!--container-->
+
+
+<script>
+
+
+    var login;
+
+
+    $(function () {
+        login = createLogin({
+            "parent": $("#stage"),
+			"onLogin":onLogin
+        });
+		
+
+    });
+	
+	function onLogin(aEmail,aPassword)
+	{
+		alert("Login mit "+aEmail+" und "+aPassword);
+	}
+    
+</script>
+
+
+</body>
+</html>

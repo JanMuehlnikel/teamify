@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="../lib/bootstrap.5.0.2.min.css" rel="stylesheet">
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="../lib/bootstrap.5.0.2.bundle.min.js"></script>
+    <script src="../lib/jquery-3.6.0.min.js"></script><!-- not required by bootstrap-->
+
+	<script src="../lib/elaspix_inputText.js"></script><!-- not required by bootstrap-->
+
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>    
+	<script src="../lib/elaspix_lineChart.js"></script>
+    <title>Test lineChart</title>
+
+    <style>
+
+
+    </style>
+
+
+</head>
+<body>
+
+
+<div class="container mt-5">
+    <h1>Closure lineChart</h1>
+	
+	<p>
+	Die lineChart-Closure wrappt die google.visualization.DataTable.
+	</p>
+	
+	<div class="row" id="stage">
+
+    </div>
+
+
+</div><!--container-->
+
+
+<script>
+
+
+    var lineChart;
+	var values1=[20,40,70,130,200,220,190,160,130,130,80,40];
+	var values2=[10,10,10,30,180,250,130,150,100,90,80,85];
+	var indexInsert=0;
+
+    $(function () {
+        lineChart = createLineChart({
+            "parent": $("#stage"),
+			"header":[{"type":"number","name":"Monat"},{"type":"number","name":"Anzahl"},{"type":"number","name":"Häufigkeit"}],
+			"title":"Eisverkauf pro Monat",
+			"subtitle":"Anzahl von Speiseeis in Litern nach Monaten eines Jahres",			
+			"autoIncrement":1
+        });
+		
+		
+		
+		insert();
+
+    });
+	
+	function insert()
+		{
+			if (indexInsert<values1.length)
+			{
+				
+				lineChart.addRow([indexInsert+1,values1[indexInsert],values2[indexInsert]]);
+				setTimeout(insert,100);
+				indexInsert++;
+			}
+		}
+    
+</script>
+
+
+</body>
+</html>

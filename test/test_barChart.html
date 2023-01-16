@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="../lib/bootstrap.5.0.2.min.css" rel="stylesheet">
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="../lib/bootstrap.5.0.2.bundle.min.js"></script>
+    <script src="../lib/jquery-3.6.0.min.js"></script><!-- not required by bootstrap-->
+
+	<script src="../lib/elaspix_inputText.js"></script><!-- not required by bootstrap-->
+
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="../lib/elaspix_check.js"></script>
+	<script src="../lib/elaspix_barChart.js"></script>
+    <title>Test barChart</title>
+
+    <style>
+
+
+    </style>
+
+
+</head>
+<body>
+
+
+<div class="container mt-5">
+    <h1>Closure barChart</h1>
+	
+	<p>
+	Die barChart-Closure wrappt die google.visualization.DataTable.
+	</p>
+	
+	<div class="row" id="stage">
+
+    </div>
+
+
+</div><!--container-->
+
+
+<script>
+
+
+    var barChart;
+	var values=[20,40,70,130,200,220,190,160,130,130,80,5];
+	var indexInsert=0;
+
+    $(function () {
+        barChart = createBarChart({
+            "parent": $("#stage"),
+			"header":[{"type":"number","name":"Monat"},{"type":"number","name":"Anzahl"}],
+			"title":"Eisverkauf pro Monat",
+			"subtitle":"Anzahl von Speiseeis in Litern nach Monaten eines Jahres"			
+        });
+		
+		
+		
+		insert();
+
+    });
+	
+	function insert()
+		{
+			if (indexInsert<values.length)
+			{
+				indexInsert++;
+				barChart.addRow([indexInsert,values[indexInsert]]);
+				setTimeout(insert,100);
+			}
+		}
+    
+</script>
+
+
+</body>
+</html>
