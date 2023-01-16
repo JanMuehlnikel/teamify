@@ -1,0 +1,15 @@
+.col{
+    border-radius:10px!important
+}
+
+#col-info-1{
+    width: 70%;
+    background-color: #E6E6E6 !important;
+    margin-right: 20px;
+}
+
+#col-info-2{
+    background-color: #E6E6E6 !important;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,15 @@
+.navbar {
+    background-color: #E6E6E6 !important;
+    margin-bottom: 20px;
+}
+.navbar-brand {
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+    font-weight: bold;
+  }
+
+#a-navbar{
+    font-weight: bold;
+    font-size: larger;
+}
