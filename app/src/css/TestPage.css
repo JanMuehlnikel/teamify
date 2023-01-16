@@ -1,7 +1,3 @@
-.col{
-    border-radius:10px!important
-}
-
 #col-info-1{
     width: 70%;
     background-color: #E6E6E6 !important;
@@ -12,4 +8,24 @@
     background-color: #E6E6E6 !important;
     display: flex;
     align-items: center;
+}
+
+#col-input{
+    border-radius:10px!important;
+    background-color: #67A97D;
+    margin-right: 40px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+#btn-updown{
+    background-color: #67A97D;
+    outline: none;
+    outline: none;
+    border: none;
+    color: white;
+    margin-left: 15px;
 }

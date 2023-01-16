@@ -3,6 +3,29 @@ import "../css/TestPage.css"
 
 function TestPage() {
 
+    let group1 = [{ color: "red", name: "Hartnäckig", id: 2 }, { color: "yellow", name: "Überzeugend", id: 1 }, { color: "blue", name: "Planend", id: 4 }, { color: "green", name: "Vermittelnd", id: 3 }]
+
+    function showcards(gruppe) {
+        console.log(gruppe)
+        return (
+            gruppe.sort((a, b) => a.id > b.id ? -1 : 1).map(eigenschaft => {
+                return (
+
+                    <div class="row">
+                        <div class="col" id="col-input">
+                            <a id="a-input">{eigenschaft.id}. {eigenschaft.name}</a>
+                        </div>
+                        <div class="col" id="col-input">
+                            <button type="button"  class="float-end" id="btn-updown">▲</button>
+                            <button type="button"  class="float-end" id="btn-updown">▼</button>
+                        </div>
+                    </div>
+
+                )
+            })
+        )
+    }
+
     return (
         <div class="container">
             <div class="row">
@@ -17,11 +40,17 @@ function TestPage() {
                     <h3>Gefällt dir der Test? Empfehle uns weiter!</h3>
                 </div>
             </div>
-
+            <div>
+            </div>
             <div class="row">
-                <div class="col col-6" id="col-info-1">
+                <div class="col" id="col-input">
+                    {showcards(group1)}
                 </div>
-                <div class="col" id="col-info-2">
+                <div class="col" id="col-input">
+                    {showcards(group1)}
+                </div>
+                <div class="col" id="col-input">
+                    {showcards(group1)}
                 </div>
             </div>
 
