@@ -5,7 +5,20 @@ const path = require('path');
 let users = [
     {
         userID: "user1", prename: "Jan", name: "Mühlnikel", email: "jan.muehlnikel@gmx.de", password: "jan2001",
-        group1: [{ color: "red", name: "Hartnäckig", id: 2 }, { color: "yellow", name: "Überzeugend", id: 1 }, { color: "blue", name: "Planend", id: 4 }, { color: "green", name: "Vermittelnd", id: 3 }]
+        groups:
+        {
+            group1: [{ color: "red", name: "Hartnäckig", id: 2 }, { color: "yellow", name: "Überzeugend", id: 1 }, { color: "blue", name: "Planend", id: 4 }, { color: "green", name: "Vermittelnd", id: 3 }],
+            group2: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
+            group3: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
+            group4: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
+            group5: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
+            group6: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
+            group7: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
+            group8: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
+            group9: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
+            group10: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
+
+        }
     },
 ]
 
@@ -37,7 +50,8 @@ app.post("/api/register", (req, res) => {
             name: req.query.name,
             email: req.query.email,
             password: req.query.password,
-            group1: [{ color: "red", name: "Hartnäckig", id: 2 }, { color: "yellow", name: "Überzeugend", id: 1 }, { color: "blue", name: "Planend", id: 4 }, { color: "green", name: "Vermittelnd", id: 3 }]
+            group1: [{ color: "red", name: "Hartnäckig", id: 2 }, { color: "yellow", name: "Überzeugend", id: 1 }, { color: "blue", name: "Planend", id: 4 }, { color: "green", name: "Vermittelnd", id: 3 }],
+
         })
         res.status(200).json({ message: "success" })
     }
@@ -64,9 +78,9 @@ app.post("/api/users/buttonUP", (req, res) => {
     userID = req.query.userID
     gruppe = req.query.gruppe
     id = req.query.id
-    id_upper = parseInt(id)+1
+    id_upper = parseInt(id) + 1
 
-    const group_array = users.find(u => u.userID == userID)[gruppe]
+    const group_array = users.find(u => u.userID == userID)["groups"][gruppe]
 
     c_id = group_array.find(i => i.id == id)["color"]
     c_id2 = group_array.find(i => i.id == id_upper)["color"]
@@ -74,21 +88,18 @@ app.post("/api/users/buttonUP", (req, res) => {
     group_array.find(c => c.color == c_id2)["id"] = parseInt(id)
     group_array.find(c => c.color == c_id)["id"] = parseInt(id_upper)
 
-    console.log(group_array.find(i => i.id == parseInt(id)))
-    console.log(group_array.find(i => i.id == parseInt(id_upper)))
-
     res.send(200)
 })
 
-// POST BUTTON UP
+// POST BUTTON Down
 app.post("/api/users/buttonDown", (req, res) => {
 
     userID = req.query.userID
     gruppe = req.query.gruppe
     id = req.query.id
-    id_upper = parseInt(id)-1
+    id_upper = parseInt(id) - 1
 
-    const group_array = users.find(u => u.userID == userID)[gruppe]
+    const group_array = users.find(u => u.userID == userID)["groups"][gruppe]
 
     c_id = group_array.find(i => i.id == id)["color"]
     c_id2 = group_array.find(i => i.id == id_upper)["color"]
@@ -96,21 +107,7 @@ app.post("/api/users/buttonDown", (req, res) => {
     group_array.find(c => c.color == c_id2)["id"] = parseInt(id)
     group_array.find(c => c.color == c_id)["id"] = parseInt(id_upper)
 
-    console.log(group_array.find(i => i.id == parseInt(id)))
-    console.log(group_array.find(i => i.id == parseInt(id_upper)))
-
     res.send(200)
-})
-
-// POST GET GROUP
-app.post("/api/users/getgroup", (req, res) => {
-
-    userID = req.query.userID
-    gruppe = req.query.gruppe
-
-    const group_array = users.find(u => u.userID == userID)[gruppe]
-
-    res.send(group_array)
 })
 
 
@@ -136,15 +133,42 @@ app.delete('/api/users/items/:UserIDItemID', (req, res) => {
 
 // GET
 app.get('/api/users', (req, res) => res.json(users));
-app.get('/api/user/group/:userID', (req, res) => {
+app.get('/api/user/:userID', (req, res) => {
     const item_array = users.find(u => u.userID == req.params.userID)
 
     res.json(item_array)
 });
-app.get('/api/user/plan/:userID', (req, res) => {
-    const planner_array = users.find(u => u.userID == req.params.userID)["planner"]
 
-    res.json(planner_array)
+// Get Group
+app.get('/api/user/getgroup/:userID', (req, res) => {
+
+    const group_array = users.find(u => u.userID == req.params.userID)["groups"]
+
+    res.send(group_array)
+});
+
+// Get Result
+app.get('/api/user/getresult/:userID', (req, res) => {
+
+    const group_array = users.find(u => u.userID == req.params.userID)["groups"]
+
+    let red = 0
+    let yellow = 0
+    let blue = 0
+    let green = 0
+
+    Object.keys(group_array).map((key, value) => {
+        red = red + group_array[key].find(c => c.color == "red")["id"]
+        yellow = yellow + group_array[key].find(c => c.color == "yellow")["id"]
+        blue = blue + group_array[key].find(c => c.color == "blue")["id"]
+        green = green + group_array[key].find(c => c.color == "green")["id"]
+
+    })
+
+    const result = {red: red, yellow: yellow, blue: blue, green: green}
+    console.log(result)
+
+    res.send(result)
 });
 
 app.get('/', (req, res) => {

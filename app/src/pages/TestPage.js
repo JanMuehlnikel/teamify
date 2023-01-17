@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
+import useFetch from "react-fetch-hook";
 import "../css/TestPage.css"
+import { useNavigate } from "react-router-dom";
 
 function TestPage() {
 
-    const [responseGroup, setGroup] = useState([])
+    const navigate = useNavigate();
 
     function buttonUp(gruppe, old_id) {
         fetch("http://localhost:8080/api/users/buttonUP?" +
@@ -17,11 +19,12 @@ function TestPage() {
                 },
                 method: "POST",
             })
-            .then(function (res) { })
+            .then(function (res) { window.location.reload() })
             .catch(function (res) { })
     }
 
     function buttonDown(gruppe, old_id) {
+        console.log(gruppe, old_id)
         fetch("http://localhost:8080/api/users/buttonDown?" +
             "userID=" + "user1" +
             "&gruppe=" + gruppe +
@@ -33,35 +36,39 @@ function TestPage() {
                 },
                 method: "POST",
             })
-            .then(function (res) { })
+            .then(function (res) { window.location.reload() })
             .catch(function (res) { })
     }
 
-    function getGroup(gruppe) {
-        fetch("http://localhost:8080/api/users/getgroup?" +
-            "userID=" + "user1" +
-            "&gruppe=" + gruppe,
-            {
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                method: "POST",
-            })
-            .then(res => res.json())
-            .then(res => {
 
-                setGroup(res)
-            })
-            .catch(function (res) { console.log(res) })
+    const { isLoading, data, error } = useFetch("http://localhost:8080/api/user/getgroup/" + "user1");
+    const { isLoading1, data1, error1 } = useFetch("http://localhost:8080/api/user/getresult/" + "user1");
 
-        return responseGroup
+    function getResult() {
+        console.log(data1)
+    }
+
+    if (isLoading) {
+        return <div>IS loading</div>
+    }
+
+    if (error) {
+        return <div>Fehler beim laden der Userdaten! Bitte starte den Rest Server</div>
+    }
+
+    if (isLoading1) {
+        return <div>IS loading</div>
+    }
+
+    if (error1) {
+        return <div>Fehler beim laden der Ergebnisdaten! Bitte starte den Rest Server</div>
     }
 
 
-    function showcards(gruppe, searchedGroup) {
+    function showcards(gruppen, searchedGroup) {
         return (
-            gruppe.sort((a, b) => a.id > b.id ? -1 : 1).map(eigenschaft => {
+
+            gruppen[searchedGroup].sort((a, b) => a.id > b.id ? -1 : 1).map(eigenschaft => {
                 return (
 
                     <div class="row">
@@ -82,6 +89,7 @@ function TestPage() {
         )
     }
 
+
     return (
 
         <div class="container">
@@ -100,41 +108,59 @@ function TestPage() {
 
             <div class="row">
                 <div class="col" id="col-input">
-                    {showcards(getGroup("group1"), "group1")}
+                    {showcards(data, "group1")}
                 </div>
                 <div class="col" id="col-input">
-
+                    {showcards(data, "group2")}
                 </div>
                 <div class="col" id="col-input">
-
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col" id="col-input">
-
-                </div>
-                <div class="col" id="col-input">
-
-                </div>
-                <div class="col" id="col-input">
-
+                    {showcards(data, "group3")}
                 </div>
             </div>
 
             <div class="row">
                 <div class="col" id="col-input">
+                    {showcards(data, "group4")}
+                </div>
+                <div class="col" id="col-input">
+                    {showcards(data, "group5")}
+                </div>
+                <div class="col" id="col-input">
+                    {showcards(data, "group6")}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col" id="col-input">
+                    {showcards(data, "group7")}
+                </div>
+                <div class="col" id="col-input">
+                    {showcards(data, "group8")}
+                </div>
+                <div class="col" id="col-input">
+                    {showcards(data, "group9")}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col" id="col-abgabe">
+                    <h3>Erfahre jetzt deine Persönlichkeit, um im Team zu arbeiten:</h3>
+                    <button type="button" class="btn btn-primary" id="button-lg" onClick={() => getResult()}>Los gehts!</button>
+
+                </div>
+                <div class="col" id="col-abgabe">
+                    <h3>Oder möchtest Du gleich deine Ergebnisse im Team vergleichen:</h3>
+                    <button type="button" class="btn btn-primary" id="button-lg">Los gehts!</button>
 
                 </div>
                 <div class="col" id="col-input">
-
-                </div>
-                <div class="col" id="col-input">
-
+                    {showcards(data, "group10")}
                 </div>
             </div>
 
         </div>
+
+
     )
 
 }
