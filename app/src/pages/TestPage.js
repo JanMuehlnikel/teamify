@@ -21,6 +21,22 @@ function TestPage() {
             .catch(function (res) { })
     }
 
+    function buttonDown(gruppe, old_id) {
+        fetch("http://localhost:8080/api/users/buttonDown?" +
+            "userID=" + "user1" +
+            "&gruppe=" + gruppe +
+            "&id=" + old_id,
+            {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: "POST",
+            })
+            .then(function (res) { })
+            .catch(function (res) { })
+    }
+
     function getGroup(gruppe) {
         fetch("http://localhost:8080/api/users/getgroup?" +
             "userID=" + "user1" +
@@ -57,7 +73,7 @@ function TestPage() {
                         </div>
                         <div class="col" id="col-text">
                             <button type="button" class="float-end" id="btn-updown" onClick={() => buttonUp(searchedGroup, eigenschaft.id)}>▲</button>
-                            <button type="button" class="float-end" id="btn-updown">▼</button>
+                            <button type="button" class="float-end" id="btn-updown" onClick={() => buttonDown(searchedGroup, eigenschaft.id)}>▼</button>
                         </div>
                     </div>
 

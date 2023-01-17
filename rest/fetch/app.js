@@ -80,6 +80,28 @@ app.post("/api/users/buttonUP", (req, res) => {
     res.send(200)
 })
 
+// POST BUTTON UP
+app.post("/api/users/buttonDown", (req, res) => {
+
+    userID = req.query.userID
+    gruppe = req.query.gruppe
+    id = req.query.id
+    id_upper = parseInt(id)-1
+
+    const group_array = users.find(u => u.userID == userID)[gruppe]
+
+    c_id = group_array.find(i => i.id == id)["color"]
+    c_id2 = group_array.find(i => i.id == id_upper)["color"]
+
+    group_array.find(c => c.color == c_id2)["id"] = parseInt(id)
+    group_array.find(c => c.color == c_id)["id"] = parseInt(id_upper)
+
+    console.log(group_array.find(i => i.id == parseInt(id)))
+    console.log(group_array.find(i => i.id == parseInt(id_upper)))
+
+    res.send(200)
+})
+
 // POST GET GROUP
 app.post("/api/users/getgroup", (req, res) => {
 
