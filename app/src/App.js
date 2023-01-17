@@ -8,6 +8,7 @@ import { Logging } from './context/context';
 import { Authentification } from './context/context';
 
 import LandingPage from './pages/LandingPage';
+import ErgebnisPage from './pages/ErgebnisPage';
 
 function App() {
   const [userID, setUserID] = useState("")
@@ -51,6 +52,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage></LandingPage>}></Route>
           <Route path="/test" element={<TestPage></TestPage>}></Route>
+          <Route path="/ergebnis" element={<ErgebnisPage></ErgebnisPage>}></Route>
         </Routes>
         
       </Authentification.Provider>

@@ -35,12 +35,20 @@
     margin-top: 20px;
     padding-top: 10px;
     padding-bottom: 5px;
+    text-align: left;
     color: white;
     font-weight: bold;
 }
 
 #col-number{
-    background-color: white;
+    background-color: #67A97D;
+    background-color: #67A97D;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: white;
+    font-weight: bold;
 }
 
 #btn-updown{

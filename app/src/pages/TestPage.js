@@ -1,11 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import useFetch from "react-fetch-hook";
 import "../css/TestPage.css"
-import { useNavigate } from "react-router-dom";
 
 function TestPage() {
 
-    const navigate = useNavigate();
 
     function buttonUp(gruppe, old_id) {
         fetch("http://localhost:8080/api/users/buttonUP?" +
@@ -72,8 +70,8 @@ function TestPage() {
                 return (
 
                     <div class="row">
-                        <div class="col" id="col-text">
-                            <a id="a-input">{eigenschaft.id}.</a>
+                        <div class="col" id="col-number">
+                            <a id="a-input">{eigenschaft.id}</a>
                         </div>
                         <div class="col" id="col-text">
                             <a id="a-input">{eigenschaft.name}</a>
@@ -143,6 +141,9 @@ function TestPage() {
             </div>
 
             <div class="row">
+                <div class="col" id="col-input">
+                    {showcards(data, "group10")}
+                </div>
                 <div class="col" id="col-abgabe">
                     <h3>Erfahre jetzt deine Persönlichkeit, um im Team zu arbeiten:</h3>
                     <button type="button" class="btn btn-primary" id="button-lg" onClick={() => getResult()}>Los gehts!</button>
@@ -152,9 +153,6 @@ function TestPage() {
                     <h3>Oder möchtest Du gleich deine Ergebnisse im Team vergleichen:</h3>
                     <button type="button" class="btn btn-primary" id="button-lg">Los gehts!</button>
 
-                </div>
-                <div class="col" id="col-input">
-                    {showcards(data, "group10")}
                 </div>
             </div>
 

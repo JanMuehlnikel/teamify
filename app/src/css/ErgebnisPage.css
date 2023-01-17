@@ -1,0 +1,56 @@
+#col-ergebnis{
+    background-color: #E6E6E6;
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+#col-red{
+    background-color: #ff0000;
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: bold;
+}
+#col-yellow{
+    background-color: #ffcc00;
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: bold;
+}
+#col-blue{
+    background-color: #003cff;
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: bold;
+}
+#col-green{
+    background-color: #008b05;
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: bold;
+}
