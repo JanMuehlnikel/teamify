@@ -7,16 +7,16 @@ let users = [
         userID: "user1", prename: "Jan", name: "Mühlnikel", email: "jan.muehlnikel@gmx.de", password: "jan2001",
         groups:
         {
-            group1: [{ color: "red", name: "Hartnäckig", id: 2 }, { color: "yellow", name: "Überzeugend", id: 1 }, { color: "blue", name: "Planend", id: 4 }, { color: "green", name: "Vermittelnd", id: 3 }],
-            group2: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
-            group3: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
-            group4: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
-            group5: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
-            group6: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
-            group7: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
-            group8: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
-            group9: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
-            group10: [{ color: "red", name: "x", id: 1 }, { color: "yellow", name: "y", id: 2 }, { color: "blue", name: "z", id: 4 }, { color: "green", name: "a", id: 3 }],
+            group1: [{ color: "yellow", name: "Optimistisch", id: 2 }, { color: "red", name: "Selbstsicher", id: 1 }, { color: "blue", name: "Genau", id: 4 }, { color: "green", name: "Harmonisch", id: 3 }],
+            group2: [{ color: "blue", name: "Nachdenken", id: 1 }, { color: "yellow", name: "Kontaktfreudig", id: 2 }, { color: "green", name: "Zuhörend", id: 4 }, { color: "red", name: "Wagemutig", id: 3 }],
+            group3: [{ color: "green", name: "Geduldig", id: 1 }, { color: "yellow", name: "Spontan", id: 2 }, { color: "red", name: "Entscheidungsfreudig", id: 4 }, { color: "blue", name: "Kontrolliert", id: 3 }],
+            group4: [{ color: "red", name: "Bestimmend", id: 1 }, { color: "blue", name: "Sorgfältig", id: 2 }, { color: "green", name: "Teamfähig", id: 4 }, { color: "yellow", name: "Begeistert", id: 3 }],
+            group5: [{ color: "green", name: "Vertrauensvoll", id: 1 }, { color: "blue", name: "Analytisch", id: 2 }, { color: "yellow", name: "Beliebt", id: 4 }, { color: "red", name: "Kraftvoll", id: 3 }],
+            group6: [{ color: "red", name: "Ergebnisorientiert", id: 1 }, { color: "green", name: "Beständig", id: 2 }, { color: "yellow", name: "Enthusiastisch", id: 4 }, { color: "blue", name: "Selbstdiszipliniert", id: 3 }],
+            group7: [{ color: "yellow", name: "Positiv", id: 1 }, { color: "red", name: "Risikofreudig", id: 2 }, { color: "blue", name: "Zurückhaltend", id: 4 }, { color: "green", name: "Unterstützend", id: 3 }],
+            group8: [{ color: "blue", name: "Kritisch", id: 1 }, { color: "yellow", name: "Impulsiv", id: 2 }, { color: "green", name: "Zuverlässig", id: 4 }, { color: "red", name: "Zielorientiert", id: 3 }],
+            group9: [{ color: "yellow", name: "Gesellig", id: 1 }, { color: "green", name: "Unauffällig", id: 2 }, { color: "red", name: "Furchtlos", id: 4 }, { color: "blue", name: "Struckturiert", id: 3 }],
+            group10: [{ color: "red", name: "Hardnäckig", id: 1 }, { color: "yellow", name: "Überzeugend", id: 2 }, { color: "blue", name: "Planend", id: 4 }, { color: "green", name: "Vermittelnd", id: 3 }],
 
         }
     },
