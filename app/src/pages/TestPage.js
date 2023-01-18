@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import useFetch from "react-fetch-hook";
 import "../css/TestPage.css"
+import { useNavigate } from "react-router-dom";
 
 function TestPage() {
 
+    const navigate = useNavigate();
+    
 
     function buttonUp(gruppe, old_id) {
         fetch("http://localhost:8080/api/users/buttonUP?" +
@@ -40,10 +43,24 @@ function TestPage() {
 
 
     const { isLoading, data, error } = useFetch("http://localhost:8080/api/user/getgroup/" + "user1");
-    const { isLoading1, data1, error1 } = useFetch("http://localhost:8080/api/user/getresult/" + "user1");
 
     function getResult() {
-        console.log(data1)
+        navigate("/ergebnis")
+    }
+
+    function getTeamResult(gruppe, old_id) {
+        fetch("http://localhost:8080/api/users/team?" +
+            "userID=" + "user1" +
+            "&team=" + "team1",
+            {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: "POST",
+            })
+            .then(function (res) { window.location.reload() })
+            .catch(function (res) { })
     }
 
     if (isLoading) {
@@ -52,14 +69,6 @@ function TestPage() {
 
     if (error) {
         return <div>Fehler beim laden der Userdaten! Bitte starte den Rest Server</div>
-    }
-
-    if (isLoading1) {
-        return <div>IS loading</div>
-    }
-
-    if (error1) {
-        return <div>Fehler beim laden der Ergebnisdaten! Bitte starte den Rest Server</div>
     }
 
 
@@ -151,7 +160,7 @@ function TestPage() {
                 </div>
                 <div class="col" id="col-abgabe">
                     <h3>Oder möchtest Du gleich deine Ergebnisse im Team vergleichen:</h3>
-                    <button type="button" class="btn btn-primary" id="button-lg">Los gehts!</button>
+                    <button type="button" class="btn btn-primary" id="button-lg" onClick={() => getTeamResult()}>Los gehts!</button>
 
                 </div>
             </div>

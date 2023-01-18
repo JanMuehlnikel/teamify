@@ -5,6 +5,7 @@ const path = require('path');
 let users = [
     {
         userID: "user1", prename: "Jan", name: "Mühlnikel", email: "jan.muehlnikel@gmx.de", password: "jan2001",
+        team: "",
         groups:
         {
             group1: [{ color: "yellow", name: "Optimistisch", id: 2 }, { color: "red", name: "Selbstsicher", id: 1 }, { color: "blue", name: "Genau", id: 4 }, { color: "green", name: "Harmonisch", id: 3 }],
@@ -69,6 +70,21 @@ app.post("/api/login", (req, res) => {
     } catch (error) {
         console.error(error)
         res.send({ auth: "error" })
+    }
+})
+
+// POST Team
+app.post("/api/users/team", (req, res) => {
+    userID = req.query.userID
+    team = req.query.team
+
+    if (team != ""){
+
+        users.find(u => u.userID == userID)["team"] = team
+
+        res.send(200)
+    }else{
+        res.send(400)
     }
 })
 
