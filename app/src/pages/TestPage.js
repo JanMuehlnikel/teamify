@@ -2,11 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import useFetch from "react-fetch-hook";
 import "../css/TestPage.css"
 import { useNavigate } from "react-router-dom";
+import { Team } from "../context/context";
 
 function TestPage() {
 
+    const {teamName, setTeam} = useContext(Team)
     const navigate = useNavigate();
-    
 
     function buttonUp(gruppe, old_id) {
         fetch("http://localhost:8080/api/users/buttonUP?" +
@@ -48,10 +49,13 @@ function TestPage() {
         navigate("/ergebnis")
     }
 
-    function getTeamResult(gruppe, old_id) {
+    function getTeamResult(team) {
+
+        setTeam(team)
+
         fetch("http://localhost:8080/api/users/team?" +
             "userID=" + "user1" +
-            "&team=" + "team1",
+            "&team=" + team,
             {
                 headers: {
                     'Accept': 'application/json',
@@ -61,6 +65,8 @@ function TestPage() {
             })
             .then(function (res) { window.location.reload() })
             .catch(function (res) { })
+
+        navigate("/teamergebnis")
     }
 
     if (isLoading) {
@@ -87,7 +93,7 @@ function TestPage() {
                         </div>
                         <div class="col" id="col-text">
                             <button type="button" class="float-end" id="btn-updown" onClick={() => buttonUp(searchedGroup, eigenschaft.id)}>▲</button>
-                            <button type="button" class="float-end" id="btn-updown" onClick={() => buttonDown(searchedGroup, eigenschaft.id)}>▼</button>
+                            <button type="button" class="float-end" id="btn-updown" onClick={() => buttonDown("team1")}>▼</button>
                         </div>
                     </div>
 
@@ -160,7 +166,7 @@ function TestPage() {
                 </div>
                 <div class="col" id="col-abgabe">
                     <h3>Oder möchtest Du gleich deine Ergebnisse im Team vergleichen:</h3>
-                    <button type="button" class="btn btn-primary" id="button-lg" onClick={() => getTeamResult()}>Los gehts!</button>
+                    <button type="button" class="btn btn-primary" id="button-lg" onClick={() => getTeamResult("team1")}>Los gehts!</button>
 
                 </div>
             </div>

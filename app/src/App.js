@@ -6,13 +6,18 @@ import TestPage from './pages/TestPage';
 
 import { Logging } from './context/context';
 import { Authentification } from './context/context';
+import { Team } from './context/context';
 
 import LandingPage from './pages/LandingPage';
 import ErgebnisPage from './pages/ErgebnisPage';
+import TeamResultPage from './pages/TeamResultPage';
 
 function App() {
   const [userID, setUserID] = useState("")
   const [loggedIn, setLoggedIn] = useState(false)
+  const [teamName, setTeam] = useState("")
+
+
   // get items from local storage
   useEffect(() => {
     const item = localStorage.getItem('userID');
@@ -28,6 +33,13 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    const item = localStorage.getItem('team');
+    if (item) {
+      setTeam(item);
+    }
+  }, []);
+
   // store items in local storage
   useEffect(() => {
     localStorage.setItem("userID", userID)
@@ -36,6 +48,11 @@ function App() {
   useEffect(() => {
     localStorage.setItem("loggedIn", loggedIn)
   }, [loggedIn])
+
+  useEffect(() => {
+    localStorage.setItem("team", teamName)
+  }, [teamName])
+
 
 
 
@@ -46,6 +63,7 @@ function App() {
 
       <Logging.Provider value={{loggedIn, setLoggedIn}}>
       <Authentification.Provider value={{userID, setUserID}}>
+      <Team.Provider value={{teamName, setTeam}}>
 
         <Navigation></Navigation>
 
@@ -53,8 +71,10 @@ function App() {
           <Route path="/" element={<LandingPage></LandingPage>}></Route>
           <Route path="/test" element={<TestPage></TestPage>}></Route>
           <Route path="/ergebnis" element={<ErgebnisPage></ErgebnisPage>}></Route>
+          <Route path="/teamergebnis" element={<TeamResultPage></TeamResultPage>}></Route>
         </Routes>
         
+      </Team.Provider>
       </Authentification.Provider>
       </Logging.Provider>
 

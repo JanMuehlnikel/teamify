@@ -21,6 +21,25 @@ let users = [
 
         }
     },
+    {
+        userID: "user2", prename: "x", name: "y", email: "jan.muehlnikel@gmx.de", password: "jan2001",
+        team: "team2",
+        groups:
+        {
+            group1: [{ color: "yellow", name: "Optimistisch", id: 2 }, { color: "red", name: "Selbstsicher", id: 1 }, { color: "blue", name: "Genau", id: 4 }, { color: "green", name: "Harmonisch", id: 3 }],
+            group2: [{ color: "blue", name: "Nachdenken", id: 1 }, { color: "yellow", name: "Kontaktfreudig", id: 2 }, { color: "green", name: "Zuhörend", id: 4 }, { color: "red", name: "Wagemutig", id: 3 }],
+            group3: [{ color: "green", name: "Geduldig", id: 1 }, { color: "yellow", name: "Spontan", id: 2 }, { color: "red", name: "Entscheidungsfreudig", id: 4 }, { color: "blue", name: "Kontrolliert", id: 3 }],
+            group4: [{ color: "red", name: "Bestimmend", id: 1 }, { color: "blue", name: "Sorgfältig", id: 2 }, { color: "green", name: "Teamfähig", id: 4 }, { color: "yellow", name: "Begeistert", id: 3 }],
+            group5: [{ color: "green", name: "Vertrauensvoll", id: 1 }, { color: "blue", name: "Analytisch", id: 2 }, { color: "yellow", name: "Beliebt", id: 4 }, { color: "red", name: "Kraftvoll", id: 3 }],
+            group6: [{ color: "red", name: "Ergebnisorientiert", id: 1 }, { color: "green", name: "Beständig", id: 2 }, { color: "yellow", name: "Enthusiastisch", id: 4 }, { color: "blue", name: "Selbstdiszipliniert", id: 3 }],
+            group7: [{ color: "yellow", name: "Positiv", id: 1 }, { color: "red", name: "Risikofreudig", id: 2 }, { color: "blue", name: "Zurückhaltend", id: 4 }, { color: "green", name: "Unterstützend", id: 3 }],
+            group8: [{ color: "blue", name: "Kritisch", id: 1 }, { color: "yellow", name: "Impulsiv", id: 2 }, { color: "green", name: "Zuverlässig", id: 4 }, { color: "red", name: "Zielorientiert", id: 3 }],
+            group9: [{ color: "yellow", name: "Gesellig", id: 1 }, { color: "green", name: "Unauffällig", id: 2 }, { color: "red", name: "Furchtlos", id: 4 }, { color: "blue", name: "Struckturiert", id: 3 }],
+            group10: [{ color: "red", name: "Hardnäckig", id: 1 }, { color: "yellow", name: "Überzeugend", id: 2 }, { color: "blue", name: "Planend", id: 4 }, { color: "green", name: "Vermittelnd", id: 3 }],
+
+        }
+    },
+
 ]
 
 app.use(function (req, res, next) {
@@ -78,12 +97,12 @@ app.post("/api/users/team", (req, res) => {
     userID = req.query.userID
     team = req.query.team
 
-    if (team != ""){
+    if (team != "") {
 
         users.find(u => u.userID == userID)["team"] = team
 
         res.send(200)
-    }else{
+    } else {
         res.send(400)
     }
 })
@@ -181,10 +200,45 @@ app.get('/api/user/getresult/:userID', (req, res) => {
 
     })
 
-    const result = {red: red, yellow: yellow, blue: blue, green: green}
+    const result = { red: red, yellow: yellow, blue: blue, green: green }
     console.log(result)
 
     res.send(result)
+});
+
+// GET TEAMERGEBNIS
+
+app.get('/api/user/getteamresult/:team', (req, res) => {
+
+    let team_array = []
+    users.map(user => {
+        if (user.team == req.params.team) {
+
+            const group_array = user["groups"]
+
+            let red = 0
+            let yellow = 0
+            let blue = 0
+            let green = 0
+
+            Object.keys(group_array).map((key, value) => {
+                red = red + group_array[key].find(c => c.color == "red")["id"]
+                yellow = yellow + group_array[key].find(c => c.color == "yellow")["id"]
+                blue = blue + group_array[key].find(c => c.color == "blue")["id"]
+                green = green + group_array[key].find(c => c.color == "green")["id"]
+
+            })
+
+            const result = { red: red, yellow: yellow, blue: blue, green: green }
+
+            var resultColor = Object.entries(result).sort((a,b)=>b[1]-a[1]).map(el=>el[0])
+
+            team_array.push({ name: user.name, color: resultColor[0]})
+            console.log(user.prename, resultColor)
+        }
+    })
+
+    res.send(team_array)
 });
 
 app.get('/', (req, res) => {
