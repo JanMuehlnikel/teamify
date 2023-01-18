@@ -1,13 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import useFetch from "react-fetch-hook";
-import "../css/TestPage.css"
+import "./TestPage.css"
 import { useNavigate } from "react-router-dom";
-import { Team } from "../context/context";
+import { Team } from "../../context/context";
+import { useForm } from "react-hook-form";
 
 function TestPage() {
 
-    const {teamName, setTeam} = useContext(Team)
+    const { teamName, setTeam } = useContext(Team)
+
     const navigate = useNavigate();
+
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
     function buttonUp(gruppe, old_id) {
         fetch("http://localhost:8080/api/users/buttonUP?" +
@@ -49,13 +53,13 @@ function TestPage() {
         navigate("/ergebnis")
     }
 
-    function getTeamResult(team) {
+      const onSubmit = data => {
 
-        setTeam(team)
+        setTeam(data.team)
 
         fetch("http://localhost:8080/api/users/team?" +
             "userID=" + "user1" +
-            "&team=" + team,
+            "&team=" + data.team,
             {
                 headers: {
                     'Accept': 'application/json',
@@ -94,6 +98,7 @@ function TestPage() {
                         <div class="col" id="col-text">
                             <button type="button" class="float-end" id="btn-updown" onClick={() => buttonUp(searchedGroup, eigenschaft.id)}>▲</button>
                             <button type="button" class="float-end" id="btn-updown" onClick={() => buttonDown("team1")}>▼</button>
+
                         </div>
                     </div>
 
@@ -165,8 +170,11 @@ function TestPage() {
 
                 </div>
                 <div class="col" id="col-abgabe">
-                    <h3>Oder möchtest Du gleich deine Ergebnisse im Team vergleichen:</h3>
-                    <button type="button" class="btn btn-primary" id="button-lg" onClick={() => getTeamResult("team1")}>Los gehts!</button>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <h3>Oder möchtest Du gleich deine Ergebnisse im Team vergleichen:</h3>
+                        <input {...register("team")} type="text" class="form-control" placeholder="TeamID" aria-label="TeamID" aria-describedby="basic-addon1" />
+                        <button class="btn btn-primary" id="button-lg" type="submit button">Los gehts!</button>
+                    </form>
 
                 </div>
             </div>

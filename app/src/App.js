@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Navigation from './components/Navigation';
-import TestPage from './pages/TestPage';
+import TestPage from './pages/TestPage/TestPage';
 
 import { Logging } from './context/context';
 import { Authentification } from './context/context';
 import { Team } from './context/context';
 
-import LandingPage from './pages/LandingPage';
-import ErgebnisPage from './pages/ErgebnisPage';
-import TeamResultPage from './pages/TeamResultPage';
+import LandingPage from './pages/LandingPage/LandingPage';
+import ErgebnisPage from './pages/ErgebnisPage/ErgebnisPage';
+import TeamResultPage from './pages/TeamResultPage/TeamResultPage';
 
 function App() {
   const [userID, setUserID] = useState("")

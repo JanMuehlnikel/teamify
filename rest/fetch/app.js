@@ -22,7 +22,7 @@ let users = [
         }
     },
     {
-        userID: "user2", prename: "x", name: "y", email: "jan.muehlnikel@gmx.de", password: "jan2001",
+        userID: "user2", prename: "Max", name: "Mustermann", email: "max.mustermann@mail.de", password: "jan2001",
         team: "team2",
         groups:
         {
@@ -233,7 +233,7 @@ app.get('/api/user/getteamresult/:team', (req, res) => {
 
             var resultColor = Object.entries(result).sort((a,b)=>b[1]-a[1]).map(el=>el[0])
 
-            team_array.push({ name: user.name, color: resultColor[0]})
+            team_array.push({ prename: user.prename, name: user.name, color: resultColor[0]})
             console.log(user.prename, resultColor)
         }
     })

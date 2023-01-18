@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import useFetch from "react-fetch-hook";
-import "../css/ErgebnisPage.css"
+import "./ErgebnisPage.css"
 
 function ErgebnisPage() {
 
