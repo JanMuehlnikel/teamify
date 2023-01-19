@@ -1,10 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import useFetch from "react-fetch-hook";
 import "./ErgebnisPage.css"
+import { Logging } from "../../context/context";
+import { Authentification } from "../../context/context";
 
 function ErgebnisPage() {
 
-    const { isLoading, data, error } = useFetch("http://localhost:8080/api/user/getresult/" + "user1");
+    const {loggedIn, setLoggedIn} = useContext(Logging)
+    const {userID, setUserID} = useContext(Authentification)
+    const { isLoading, data, error } = useFetch("http://localhost:8080/api/user/getresult/" + userID);
 
     console.log(data)
 

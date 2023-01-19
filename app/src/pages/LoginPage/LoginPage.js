@@ -3,14 +3,17 @@ import loginImage from "./loginimage.jpeg"
 import "./LoginPage.css"
 import { useForm } from "react-hook-form";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Logging } from "../../context/context";
+import { Logging, Name } from "../../context/context";
 import { Authentification } from "../../context/context";
 import { useNavigate } from "react-router-dom";
+import { Team } from "../../context/context";
 
 function LoginPage() {
 
     const {loggedIn, setLoggedIn} = useContext(Logging)
     const {userID, setUserID} = useContext(Authentification)
+    const { teamName, setTeam } = useContext(Team)
+    const { userName, setName } = useContext(Name)
 
     const [warnMessage, setLoginMessage] = useState("")
 
@@ -22,10 +25,10 @@ function LoginPage() {
     
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const onLogin = data => {
+    const onLogin = loginData => {
         fetch("http://localhost:8080/api/login?" +
-            "email=" + data.email +
-            "&password=" + data.password,
+            "email=" + loginData.loginEmail +
+            "&password=" + loginData.loginPassword,
             {
                 headers: {
                     'Accept': 'application/json',
@@ -37,10 +40,13 @@ function LoginPage() {
             .then(res => {
 
                 if (res.auth != "error") {
+                    console.log("auth")
                     setUserID(res.auth)
                     setLoginMessage("Erfolgreich angemeldet!")
                     setLoggedIn(true)
+                    setTeam(res.team)
                     navigate("/test")
+                    setName(res.name)
                 } else {
                     setLoginMessage("Die Email Adresse oder das Passwort sind falsch!")
                 }
@@ -53,13 +59,13 @@ function LoginPage() {
     // generate a userID from tiem string and a random string 
     const generatedID = "user:" + (new Date()).getTime().toString(36) + Math.random().toString(36).slice(2)
  
-    const onRegister = data => {
+    const onRegister = registerData => {
        fetch("http://localhost:8080/api/register?" +
           "userID=" + generatedID +
-          "&prename=" + data.prename +
-          "&name=" + data.name +
-          "&email=" + data.email +
-          "&password=" + data.password,
+          "&prename=" + registerData.prename +
+          "&name=" + registerData.name +
+          "&email=" + registerData.email +
+          "&password=" + registerData.password,
           {
              headers: {
                 'Accept': 'application/json',
@@ -73,7 +79,9 @@ function LoginPage() {
              if (res.message == "success") {
                 setUserID(generatedID)
                 setLoggedIn(true)
-                navigate("/list")
+                navigate("/test")
+                setTeam("")
+                setName(registerData.prename + " " + registerData.name)
              } else {
                 setRegisterMessage(res.message)
              }
@@ -99,11 +107,11 @@ function LoginPage() {
                     <form onSubmit={handleSubmit(onLogin)} >
                         <div class="form-group">
                             <label for="input-email">Email Adresse</label>
-                            <input {...register("email")} type="email" class="form-control" id="input-email" aria-describedby="emailHelp" placeholder="Email Adresse" />
+                            <input {...register("loginEmail")} type="email" class="form-control" id="input-email" aria-describedby="emailHelp" placeholder="Email Adresse" />
                         </div>
                         <div class="form-group">
                             <label for="input-password">Passwort</label>
-                            <input {...register("password")} type="password" class="form-control" id="input-password" placeholder="Passwort" />
+                            <input {...register("loginPassword")} type="password" class="form-control" id="input-password" placeholder="Passwort" />
                         </div>
                         <p class="txt-warnMessage" id="txt-warn">{warnMessage}</p>
                         <button type="submit" class="btn btn-light btn-primary">Einloggen</button>

@@ -4,10 +4,14 @@ import "./TestPage.css"
 import { useNavigate } from "react-router-dom";
 import { Team } from "../../context/context";
 import { useForm } from "react-hook-form";
+import { Logging } from "../../context/context";
+import { Authentification } from "../../context/context";
 
 function TestPage() {
 
     const { teamName, setTeam } = useContext(Team)
+    const {loggedIn, setLoggedIn} = useContext(Logging)
+    const {userID, setUserID} = useContext(Authentification)
 
     const navigate = useNavigate();
 
@@ -15,7 +19,7 @@ function TestPage() {
 
     function buttonUp(gruppe, old_id) {
         fetch("http://localhost:8080/api/users/buttonUP?" +
-            "userID=" + "user1" +
+            "userID=" + userID +
             "&gruppe=" + gruppe +
             "&id=" + old_id,
             {
@@ -32,7 +36,7 @@ function TestPage() {
     function buttonDown(gruppe, old_id) {
         console.log(gruppe, old_id)
         fetch("http://localhost:8080/api/users/buttonDown?" +
-            "userID=" + "user1" +
+            "userID=" + userID +
             "&gruppe=" + gruppe +
             "&id=" + old_id,
             {
@@ -47,7 +51,7 @@ function TestPage() {
     }
 
 
-    const { isLoading, data, error } = useFetch("http://localhost:8080/api/user/getgroup/" + "user1");
+    const { isLoading, data, error } = useFetch("http://localhost:8080/api/user/getgroup/" + userID);
 
     function getResult() {
         navigate("/ergebnis")
@@ -58,7 +62,7 @@ function TestPage() {
         setTeam(data.team)
 
         fetch("http://localhost:8080/api/users/team?" +
-            "userID=" + "user1" +
+            "userID=" + userID +
             "&team=" + data.team,
             {
                 headers: {
@@ -97,7 +101,7 @@ function TestPage() {
                         </div>
                         <div class="col" id="col-text">
                             <button type="button" class="float-end" id="btn-updown" onClick={() => buttonUp(searchedGroup, eigenschaft.id)}>▲</button>
-                            <button type="button" class="float-end" id="btn-updown" onClick={() => buttonDown("team1")}>▼</button>
+                            <button type="button" class="float-end" id="btn-updown" onClick={() => buttonDown(searchedGroup, eigenschaft.id)}>▼</button>
 
                         </div>
                     </div>

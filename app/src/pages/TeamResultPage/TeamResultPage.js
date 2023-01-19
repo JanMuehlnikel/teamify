@@ -2,11 +2,16 @@ import React, { useContext } from "react";
 import useFetch from "react-fetch-hook";
 import { useNavigate } from "react-router-dom";
 import { Team } from "../../context/context";
+import { Logging } from "../../context/context";
+import { Authentification } from "../../context/context";
 import "./TeamResultPage.css"
 
 function TeamResultPage() {
 
     const { teamName, setTeam } = useContext(Team)
+    const {loggedIn, setLoggedIn} = useContext(Logging)
+    const {userID, setUserID} = useContext(Authentification)
+
     const navigate = useNavigate();
 
     const { isLoading, data, error } = useFetch("http://localhost:8080/api/user/getteamresult/" + teamName);

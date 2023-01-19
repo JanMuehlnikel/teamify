@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const { send } = require('process');
 
 let users = [
     {
@@ -70,7 +71,21 @@ app.post("/api/register", (req, res) => {
             name: req.query.name,
             email: req.query.email,
             password: req.query.password,
-            group1: [{ color: "red", name: "Hartnäckig", id: 2 }, { color: "yellow", name: "Überzeugend", id: 1 }, { color: "blue", name: "Planend", id: 4 }, { color: "green", name: "Vermittelnd", id: 3 }],
+            team: "",
+            groups:
+            {
+                group1: [{ color: "yellow", name: "Optimistisch", id: 2 }, { color: "red", name: "Selbstsicher", id: 1 }, { color: "blue", name: "Genau", id: 4 }, { color: "green", name: "Harmonisch", id: 3 }],
+                group2: [{ color: "blue", name: "Nachdenken", id: 1 }, { color: "yellow", name: "Kontaktfreudig", id: 2 }, { color: "green", name: "Zuhörend", id: 4 }, { color: "red", name: "Wagemutig", id: 3 }],
+                group3: [{ color: "green", name: "Geduldig", id: 1 }, { color: "yellow", name: "Spontan", id: 2 }, { color: "red", name: "Entscheidungsfreudig", id: 4 }, { color: "blue", name: "Kontrolliert", id: 3 }],
+                group4: [{ color: "red", name: "Bestimmend", id: 1 }, { color: "blue", name: "Sorgfältig", id: 2 }, { color: "green", name: "Teamfähig", id: 4 }, { color: "yellow", name: "Begeistert", id: 3 }],
+                group5: [{ color: "green", name: "Vertrauensvoll", id: 1 }, { color: "blue", name: "Analytisch", id: 2 }, { color: "yellow", name: "Beliebt", id: 4 }, { color: "red", name: "Kraftvoll", id: 3 }],
+                group6: [{ color: "red", name: "Ergebnisorientiert", id: 1 }, { color: "green", name: "Beständig", id: 2 }, { color: "yellow", name: "Enthusiastisch", id: 4 }, { color: "blue", name: "Selbstdiszipliniert", id: 3 }],
+                group7: [{ color: "yellow", name: "Positiv", id: 1 }, { color: "red", name: "Risikofreudig", id: 2 }, { color: "blue", name: "Zurückhaltend", id: 4 }, { color: "green", name: "Unterstützend", id: 3 }],
+                group8: [{ color: "blue", name: "Kritisch", id: 1 }, { color: "yellow", name: "Impulsiv", id: 2 }, { color: "green", name: "Zuverlässig", id: 4 }, { color: "red", name: "Zielorientiert", id: 3 }],
+                group9: [{ color: "yellow", name: "Gesellig", id: 1 }, { color: "green", name: "Unauffällig", id: 2 }, { color: "red", name: "Furchtlos", id: 4 }, { color: "blue", name: "Struckturiert", id: 3 }],
+                group10: [{ color: "red", name: "Hardnäckig", id: 1 }, { color: "yellow", name: "Überzeugend", id: 2 }, { color: "blue", name: "Planend", id: 4 }, { color: "green", name: "Vermittelnd", id: 3 }],
+    
+            }
 
         })
         res.status(200).json({ message: "success" })
@@ -79,17 +94,38 @@ app.post("/api/register", (req, res) => {
 
 // POST LOGIN
 app.post("/api/login", (req, res) => {
-    try {
-        userEmail = users.find(u => u.email == req.query.email)["email"]
-        userPassword = users.find(u => u.password == req.query.password)["password"]
-        userID = users.find(u => u.email == req.query.email)["userID"]
+    console.log("login")
 
-        res.send({ auth: userID })
+    let existsAccount = false
 
-    } catch (error) {
-        console.error(error)
+    // check if email exists in users array
+    for (var i = 0; i < users.length; i++) {
+        if (users[i]['email'] == req.query.email && users[i]['password'] === req.query.password) {
+            existsAccount = true
+            break
+        }
+    }
+
+    if (existsAccount) {
+
+        try {
+            userID = users.find(u => u.email == req.query.email)["userID"]
+            team_id = users.find(u => u.team == req.query.team)
+            prename = users.find(u => u.userID == userID)["prename"]
+            lastname = users.find(u => u.userID == userID)["name"]
+
+            fullname = prename + " " + lastname   
+
+            res.send({ auth: userID, team: team_id, name: fullname})
+
+        } catch (error) {
+            console.log("error")
+            res.send({ auth: "error" })
+        }
+    }else{
         res.send({ auth: "error" })
     }
+    
 })
 
 // POST Team
