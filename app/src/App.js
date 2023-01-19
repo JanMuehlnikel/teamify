@@ -11,6 +11,7 @@ import { Team } from './context/context';
 import LandingPage from './pages/LandingPage/LandingPage';
 import ErgebnisPage from './pages/ErgebnisPage/ErgebnisPage';
 import TeamResultPage from './pages/TeamResultPage/TeamResultPage';
+import LoginPage from './pages/LoginPage/LoginPage';
 
 function App() {
   const [userID, setUserID] = useState("")
@@ -72,6 +73,7 @@ function App() {
           <Route path="/test" element={<TestPage></TestPage>}></Route>
           <Route path="/ergebnis" element={<ErgebnisPage></ErgebnisPage>}></Route>
           <Route path="/teamergebnis" element={<TeamResultPage></TeamResultPage>}></Route>
+          <Route path="/login" element={<LoginPage></LoginPage>}></Route>
         </Routes>
         
       </Team.Provider>
