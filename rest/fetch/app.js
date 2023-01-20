@@ -9,16 +9,16 @@ let users = [
         team: "",
         groups:
         {
-            group1: [{ color: "yellow", name: "Optimistisch", id: 2 }, { color: "red", name: "Selbstsicher", id: 1 }, { color: "blue", name: "Genau", id: 4 }, { color: "green", name: "Harmonisch", id: 3 }],
-            group2: [{ color: "blue", name: "Nachdenken", id: 1 }, { color: "yellow", name: "Kontaktfreudig", id: 2 }, { color: "green", name: "Zuhörend", id: 4 }, { color: "red", name: "Wagemutig", id: 3 }],
-            group3: [{ color: "green", name: "Geduldig", id: 1 }, { color: "yellow", name: "Spontan", id: 2 }, { color: "red", name: "Entscheidungsfreudig", id: 4 }, { color: "blue", name: "Kontrolliert", id: 3 }],
-            group4: [{ color: "red", name: "Bestimmend", id: 1 }, { color: "blue", name: "Sorgfältig", id: 2 }, { color: "green", name: "Teamfähig", id: 4 }, { color: "yellow", name: "Begeistert", id: 3 }],
-            group5: [{ color: "green", name: "Vertrauensvoll", id: 1 }, { color: "blue", name: "Analytisch", id: 2 }, { color: "yellow", name: "Beliebt", id: 4 }, { color: "red", name: "Kraftvoll", id: 3 }],
-            group6: [{ color: "red", name: "Ergebnisorientiert", id: 1 }, { color: "green", name: "Beständig", id: 2 }, { color: "yellow", name: "Enthusiastisch", id: 4 }, { color: "blue", name: "Selbstdiszipliniert", id: 3 }],
-            group7: [{ color: "yellow", name: "Positiv", id: 1 }, { color: "red", name: "Risikofreudig", id: 2 }, { color: "blue", name: "Zurückhaltend", id: 4 }, { color: "green", name: "Unterstützend", id: 3 }],
-            group8: [{ color: "blue", name: "Kritisch", id: 1 }, { color: "yellow", name: "Impulsiv", id: 2 }, { color: "green", name: "Zuverlässig", id: 4 }, { color: "red", name: "Zielorientiert", id: 3 }],
-            group9: [{ color: "yellow", name: "Gesellig", id: 1 }, { color: "green", name: "Unauffällig", id: 2 }, { color: "red", name: "Furchtlos", id: 4 }, { color: "blue", name: "Struckturiert", id: 3 }],
-            group10: [{ color: "red", name: "Hardnäckig", id: 1 }, { color: "yellow", name: "Überzeugend", id: 2 }, { color: "blue", name: "Planend", id: 4 }, { color: "green", name: "Vermittelnd", id: 3 }],
+            group1: [{ color: "gelb", name: "Optimistisch", id: 2 }, { color: "rot", name: "Selbstsicher", id: 1 }, { color: "blau", name: "Genau", id: 4 }, { color: "grün", name: "Harmonisch", id: 3 }],
+            group2: [{ color: "blau", name: "Nachdenken", id: 1 }, { color: "gelb", name: "Kontaktfreudig", id: 2 }, { color: "grün", name: "Zuhörend", id: 4 }, { color: "rot", name: "Wagemutig", id: 3 }],
+            group3: [{ color: "grün", name: "Geduldig", id: 1 }, { color: "gelb", name: "Spontan", id: 2 }, { color: "rot", name: "Entscheidungsfreudig", id: 4 }, { color: "blau", name: "Kontrolliert", id: 3 }],
+            group4: [{ color: "rot", name: "Bestimmend", id: 1 }, { color: "blau", name: "Sorgfältig", id: 2 }, { color: "grün", name: "Teamfähig", id: 4 }, { color: "gelb", name: "Begeistert", id: 3 }],
+            group5: [{ color: "grün", name: "Vertrauensvoll", id: 1 }, { color: "blau", name: "Analytisch", id: 2 }, { color: "gelb", name: "Beliebt", id: 4 }, { color: "rot", name: "Kraftvoll", id: 3 }],
+            group6: [{ color: "rot", name: "Ergebnisorientiert", id: 1 }, { color: "grün", name: "Beständig", id: 2 }, { color: "gelb", name: "Enthusiastisch", id: 4 }, { color: "blau", name: "Selbstdiszipliniert", id: 3 }],
+            group7: [{ color: "gelb", name: "Positiv", id: 1 }, { color: "rot", name: "Risikofreudig", id: 2 }, { color: "blau", name: "Zurückhaltend", id: 4 }, { color: "grün", name: "Unterstützend", id: 3 }],
+            group8: [{ color: "blau", name: "Kritisch", id: 1 }, { color: "gelb", name: "Impulsiv", id: 2 }, { color: "grün", name: "Zuverlässig", id: 4 }, { color: "rot", name: "Zielorientiert", id: 3 }],
+            group9: [{ color: "gelb", name: "Gesellig", id: 1 }, { color: "grün", name: "Unauffällig", id: 2 }, { color: "rot", name: "Furchtlos", id: 4 }, { color: "blau", name: "Struckturiert", id: 3 }],
+            group10: [{ color: "rot", name: "Hardnäckig", id: 1 }, { color: "gelb", name: "Überzeugend", id: 2 }, { color: "blau", name: "Planend", id: 4 }, { color: "grün", name: "Vermittelnd", id: 3 }],
 
         }
     },
@@ -27,16 +27,7 @@ let users = [
         team: "team2",
         groups:
         {
-            group1: [{ color: "yellow", name: "Optimistisch", id: 2 }, { color: "red", name: "Selbstsicher", id: 1 }, { color: "blue", name: "Genau", id: 4 }, { color: "green", name: "Harmonisch", id: 3 }],
-            group2: [{ color: "blue", name: "Nachdenken", id: 1 }, { color: "yellow", name: "Kontaktfreudig", id: 2 }, { color: "green", name: "Zuhörend", id: 4 }, { color: "red", name: "Wagemutig", id: 3 }],
-            group3: [{ color: "green", name: "Geduldig", id: 1 }, { color: "yellow", name: "Spontan", id: 2 }, { color: "red", name: "Entscheidungsfreudig", id: 4 }, { color: "blue", name: "Kontrolliert", id: 3 }],
-            group4: [{ color: "red", name: "Bestimmend", id: 1 }, { color: "blue", name: "Sorgfältig", id: 2 }, { color: "green", name: "Teamfähig", id: 4 }, { color: "yellow", name: "Begeistert", id: 3 }],
-            group5: [{ color: "green", name: "Vertrauensvoll", id: 1 }, { color: "blue", name: "Analytisch", id: 2 }, { color: "yellow", name: "Beliebt", id: 4 }, { color: "red", name: "Kraftvoll", id: 3 }],
-            group6: [{ color: "red", name: "Ergebnisorientiert", id: 1 }, { color: "green", name: "Beständig", id: 2 }, { color: "yellow", name: "Enthusiastisch", id: 4 }, { color: "blue", name: "Selbstdiszipliniert", id: 3 }],
-            group7: [{ color: "yellow", name: "Positiv", id: 1 }, { color: "red", name: "Risikofreudig", id: 2 }, { color: "blue", name: "Zurückhaltend", id: 4 }, { color: "green", name: "Unterstützend", id: 3 }],
-            group8: [{ color: "blue", name: "Kritisch", id: 1 }, { color: "yellow", name: "Impulsiv", id: 2 }, { color: "green", name: "Zuverlässig", id: 4 }, { color: "red", name: "Zielorientiert", id: 3 }],
-            group9: [{ color: "yellow", name: "Gesellig", id: 1 }, { color: "green", name: "Unauffällig", id: 2 }, { color: "red", name: "Furchtlos", id: 4 }, { color: "blue", name: "Struckturiert", id: 3 }],
-            group10: [{ color: "red", name: "Hardnäckig", id: 1 }, { color: "yellow", name: "Überzeugend", id: 2 }, { color: "blue", name: "Planend", id: 4 }, { color: "green", name: "Vermittelnd", id: 3 }],
+        
 
         }
     },
@@ -74,16 +65,16 @@ app.post("/api/register", (req, res) => {
             team: "",
             groups:
             {
-                group1: [{ color: "yellow", name: "Optimistisch", id: 2 }, { color: "red", name: "Selbstsicher", id: 1 }, { color: "blue", name: "Genau", id: 4 }, { color: "green", name: "Harmonisch", id: 3 }],
-                group2: [{ color: "blue", name: "Nachdenken", id: 1 }, { color: "yellow", name: "Kontaktfreudig", id: 2 }, { color: "green", name: "Zuhörend", id: 4 }, { color: "red", name: "Wagemutig", id: 3 }],
-                group3: [{ color: "green", name: "Geduldig", id: 1 }, { color: "yellow", name: "Spontan", id: 2 }, { color: "red", name: "Entscheidungsfreudig", id: 4 }, { color: "blue", name: "Kontrolliert", id: 3 }],
-                group4: [{ color: "red", name: "Bestimmend", id: 1 }, { color: "blue", name: "Sorgfältig", id: 2 }, { color: "green", name: "Teamfähig", id: 4 }, { color: "yellow", name: "Begeistert", id: 3 }],
-                group5: [{ color: "green", name: "Vertrauensvoll", id: 1 }, { color: "blue", name: "Analytisch", id: 2 }, { color: "yellow", name: "Beliebt", id: 4 }, { color: "red", name: "Kraftvoll", id: 3 }],
-                group6: [{ color: "red", name: "Ergebnisorientiert", id: 1 }, { color: "green", name: "Beständig", id: 2 }, { color: "yellow", name: "Enthusiastisch", id: 4 }, { color: "blue", name: "Selbstdiszipliniert", id: 3 }],
-                group7: [{ color: "yellow", name: "Positiv", id: 1 }, { color: "red", name: "Risikofreudig", id: 2 }, { color: "blue", name: "Zurückhaltend", id: 4 }, { color: "green", name: "Unterstützend", id: 3 }],
-                group8: [{ color: "blue", name: "Kritisch", id: 1 }, { color: "yellow", name: "Impulsiv", id: 2 }, { color: "green", name: "Zuverlässig", id: 4 }, { color: "red", name: "Zielorientiert", id: 3 }],
-                group9: [{ color: "yellow", name: "Gesellig", id: 1 }, { color: "green", name: "Unauffällig", id: 2 }, { color: "red", name: "Furchtlos", id: 4 }, { color: "blue", name: "Struckturiert", id: 3 }],
-                group10: [{ color: "red", name: "Hardnäckig", id: 1 }, { color: "yellow", name: "Überzeugend", id: 2 }, { color: "blue", name: "Planend", id: 4 }, { color: "green", name: "Vermittelnd", id: 3 }],
+                group1: [{ color: "gelb", name: "Optimistisch", id: 2 }, { color: "rot", name: "Selbstsicher", id: 1 }, { color: "blau", name: "Genau", id: 4 }, { color: "grün", name: "Harmonisch", id: 3 }],
+                group2: [{ color: "blau", name: "Nachdenken", id: 1 }, { color: "gelb", name: "Kontaktfreudig", id: 2 }, { color: "grün", name: "Zuhörend", id: 4 }, { color: "rot", name: "Wagemutig", id: 3 }],
+                group3: [{ color: "grün", name: "Geduldig", id: 1 }, { color: "gelb", name: "Spontan", id: 2 }, { color: "rot", name: "Entscheidungsfreudig", id: 4 }, { color: "blau", name: "Kontrolliert", id: 3 }],
+                group4: [{ color: "rot", name: "Bestimmend", id: 1 }, { color: "blau", name: "Sorgfältig", id: 2 }, { color: "grün", name: "Teamfähig", id: 4 }, { color: "gelb", name: "Begeistert", id: 3 }],
+                group5: [{ color: "grün", name: "Vertrauensvoll", id: 1 }, { color: "blau", name: "Analytisch", id: 2 }, { color: "gelb", name: "Beliebt", id: 4 }, { color: "rot", name: "Kraftvoll", id: 3 }],
+                group6: [{ color: "rot", name: "Ergebnisorientiert", id: 1 }, { color: "grün", name: "Beständig", id: 2 }, { color: "gelb", name: "Enthusiastisch", id: 4 }, { color: "blau", name: "Selbstdiszipliniert", id: 3 }],
+                group7: [{ color: "gelb", name: "Positiv", id: 1 }, { color: "rot", name: "Risikofreudig", id: 2 }, { color: "blau", name: "Zurückhaltend", id: 4 }, { color: "grün", name: "Unterstützend", id: 3 }],
+                group8: [{ color: "blau", name: "Kritisch", id: 1 }, { color: "gelb", name: "Impulsiv", id: 2 }, { color: "grün", name: "Zuverlässig", id: 4 }, { color: "rot", name: "Zielorientiert", id: 3 }],
+                group9: [{ color: "gelb", name: "Gesellig", id: 1 }, { color: "grün", name: "Unauffällig", id: 2 }, { color: "rot", name: "Furchtlos", id: 4 }, { color: "blau", name: "Struckturiert", id: 3 }],
+                group10: [{ color: "rot", name: "Hardnäckig", id: 1 }, { color: "gelb", name: "Überzeugend", id: 2 }, { color: "blau", name: "Planend", id: 4 }, { color: "grün", name: "Vermittelnd", id: 3 }],
     
             }
 
@@ -223,20 +214,20 @@ app.get('/api/user/getresult/:userID', (req, res) => {
 
     const group_array = users.find(u => u.userID == req.params.userID)["groups"]
 
-    let red = 0
-    let yellow = 0
-    let blue = 0
-    let green = 0
+    let rot = 0
+    let gelb = 0
+    let blau = 0
+    let grün = 0
 
     Object.keys(group_array).map((key, value) => {
-        red = red + group_array[key].find(c => c.color == "red")["id"]
-        yellow = yellow + group_array[key].find(c => c.color == "yellow")["id"]
-        blue = blue + group_array[key].find(c => c.color == "blue")["id"]
-        green = green + group_array[key].find(c => c.color == "green")["id"]
+        rot = rot + group_array[key].find(c => c.color == "rot")["id"]
+        gelb = gelb + group_array[key].find(c => c.color == "gelb")["id"]
+        blau = blau + group_array[key].find(c => c.color == "blau")["id"]
+        grün = grün + group_array[key].find(c => c.color == "grün")["id"]
 
     })
 
-    const result = { red: red, yellow: yellow, blue: blue, green: green }
+    const result = { rot: rot, gelb: gelb, blau: blau, grün: grün }
     console.log(result)
 
     res.send(result)
@@ -252,20 +243,20 @@ app.get('/api/user/getteamresult/:team', (req, res) => {
 
             const group_array = user["groups"]
 
-            let red = 0
-            let yellow = 0
-            let blue = 0
-            let green = 0
+            let rot = 0
+            let gelb = 0
+            let blau = 0
+            let grün = 0
 
             Object.keys(group_array).map((key, value) => {
-                red = red + group_array[key].find(c => c.color == "red")["id"]
-                yellow = yellow + group_array[key].find(c => c.color == "yellow")["id"]
-                blue = blue + group_array[key].find(c => c.color == "blue")["id"]
-                green = green + group_array[key].find(c => c.color == "green")["id"]
+                rot = rot + group_array[key].find(c => c.color == "rot")["id"]
+                gelb = gelb + group_array[key].find(c => c.color == "gelb")["id"]
+                blau = blau + group_array[key].find(c => c.color == "blau")["id"]
+                grün = grün + group_array[key].find(c => c.color == "grün")["id"]
 
             })
 
-            const result = { red: red, yellow: yellow, blue: blue, green: green }
+            const result = { rot: rot, gelb: gelb, blau: blau, grün: grün }
 
             var resultColor = Object.entries(result).sort((a,b)=>b[1]-a[1]).map(el=>el[0])
 

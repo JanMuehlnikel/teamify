@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import loginImage from "./loginimage.jpeg"
+import loginImage from "./team-fade.png"
 import "./LoginPage.css"
 import { useForm } from "react-hook-form";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -95,7 +95,7 @@ function LoginPage() {
             <div class="row">
                 <div class="col" id="col-image">
 
-                    <img src={loginImage} />
+                    <img id="img-1" src={loginImage} />
 
                     <h1>Gleich haben Sie es
                         geschafft ihr Team
@@ -104,6 +104,7 @@ function LoginPage() {
 
                 </div>
                 <div class="col" id="col-login">
+                    <h1 id="h1-bold">Einloggen</h1>
                     <form onSubmit={handleSubmit(onLogin)} >
                         <div class="form-group">
                             <label for="input-email">Email Adresse</label>
@@ -114,8 +115,10 @@ function LoginPage() {
                             <input {...register("loginPassword")} type="password" class="form-control" id="input-password" placeholder="Passwort" />
                         </div>
                         <p class="txt-warnMessage" id="txt-warn">{warnMessage}</p>
-                        <button type="submit" class="btn btn-light btn-primary">Einloggen</button>
+                        <button type="submit" class="btn btn-light btn-primary" id="btn-login">Einloggen</button>
                     </form>
+
+                    <h1 id="h1-bold">oder Registrieren</h1>
 
                     <form onSubmit={handleSubmit(onRegister)} >
                      <div class="form-group">
@@ -135,7 +138,7 @@ function LoginPage() {
                         <input {...register("password")} type="password" class="form-control" id="input-password" placeholder="Passwort" />
                      </div>
                      <p class="txt-warnMessage" id="txt-warn">{warnRegisterMessage}</p>
-                     <button type="submit" class="btn btn-light btn-primary">Hier registrieren</button>
+                     <button type="submit" class="btn btn-light btn-primary" id="btn-login">Hier registrieren</button>
                   </form>
                 </div>
             </div>

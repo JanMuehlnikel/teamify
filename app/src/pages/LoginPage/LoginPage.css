@@ -1,11 +1,29 @@
-#col-login{
+#col-login {
     background-color: #67A97D !important;
     color: white;
     border-radius: 0px !important;
+    font-weight: bold;
 }
-#col-image{
+
+#row-text {
+    display: flex !important;
+    flex: 1;
+}
+
+#h1-bold {
+    text-align: center;
+    font-weight: bold;
+}
+
+#col-image {
     background-color: #67A97D !important;
     color: white;
     font-weight: bold;
     border-radius: 0px !important;
+}
+
+#btn-login {
+    background-color: #269AFF;
+    color: white;
+    border: none;
 }

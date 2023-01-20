@@ -77,19 +77,19 @@ function TeamResultPage() {
 
             <div class="row" id="row-auspraegung">
                 <h2>Rote Ausprägung</h2>
-                {getAuspraegung("red")}
+                {getAuspraegung("rot")}
             </div>
             <div class="row" id="row-auspraegung">
                 <h2>Gelbe Ausprägung</h2>
-                {getAuspraegung("yellow")}
+                {getAuspraegung("gelb")}
             </div>
             <div class="row" id="row-auspraegung">
                 <h2>Blaue Ausprägung</h2>
-                {getAuspraegung("blue")}
+                {getAuspraegung("blau")}
             </div>
             <div class="row" id="row-auspraegung">
                 <h2>Grüne Ausprägung</h2>
-                {getAuspraegung("green")}
+                {getAuspraegung("grün")}
             </div>
         </div>
     )
