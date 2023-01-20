@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../css/Navigation.css"
+import "./Navigation.css"
 
 import { Nav, Navbar } from 'react-bootstrap'
 
 import { Link } from "react-router-dom";
 
-import { Logging } from "../context/context";
-import { Authentification } from '../context/context';
-import { Name } from '../context/context';
+import { Logging } from "../../context/context";
+import { Authentification } from '../../context/context';
+import { Name } from '../../context/context';
 
 
 function Navigation() {

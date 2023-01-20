@@ -23,6 +23,15 @@
 
 }
 
+.rand{
+    margin: 0 !important;
+}
+
+.body {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .card {
     width: 25rem;
     margin-left: 20px;
@@ -64,10 +73,11 @@ hr {
 img {
     max-width: 100%;
     height: auto;
-    width: auto\9; /* ie8 */
+    width: auto\9;
+    /* ie8 */
 }
 
-.txt2{
+.txt2 {
     margin-top: 20px;
     text-align: center;
     font-weight: bold;
@@ -89,4 +99,21 @@ img {
     margin-right: 20px;
     margin-left: 40px;
     margin-bottom: 20px;
+}
+
+.col-ses {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.txt-ses {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 6vw;
 }

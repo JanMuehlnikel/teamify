@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Navigation from './components/Navigation';
+import Navigation from './components/Navbar/Navigation';
 import TestPage from './pages/TestPage/TestPage';
 
 import { Logging } from './context/context';

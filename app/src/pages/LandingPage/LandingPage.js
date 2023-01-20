@@ -12,7 +12,7 @@ function LandingPage() {
             <div class="container-fluid" id="con-head">
                 <div class="row">
                     <div class="col">
-                        <h1 class="t1">Das perfekte Team gibt es nicht?<br /> Falsch.</h1>
+                        <h1 class="t1">Das perfekte Team gibt es nicht?<br /> Falsch!</h1>
 
                         <h2 class="t2">Durch unsere intelligenten Tools finden wir Ihr
                             perfektes Team, das genau auf ihre Bedürfnisse
@@ -83,15 +83,19 @@ function LandingPage() {
             <hr />
             <div class="row row-c1 justify-content-center">
                 <div class="col col-info1">
-                    <div class="col col-6 col-info1">
-                        <h1>
-                            Schnell.
-                            Einfach.
-                            Sicher.
-                        </h1>
-                    </div>
-                    <div class="col col-info3">
-                        <img src={pic_sicher} height="auto" width="auto"></img>
+                    <div class="row">
+                        <div class="col col-ses col-info1">
+                            <div class="col col-ses">
+                                <h1 className="txt-ses">
+                                    Schnell.<br />
+                                    Einfach.<br />
+                                    Sicher.
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src={pic_sicher} height="auto" width="auto"></img>
+                        </div>
                     </div>
                 </div>
             </div>
