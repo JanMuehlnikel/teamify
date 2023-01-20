@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Navigation from './components/Navbar/Navigation';
+import AlternativeNavigation from './components/Navbar/AlternativeNavigation';
 import TestPage from './pages/TestPage/TestPage';
 
-import { Logging } from './context/context';
+import { Logging, Navbool } from './context/context';
 import { Authentification } from './context/context';
 import { Team } from './context/context';
 import { Name } from './context/context';
@@ -19,6 +20,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false)
   const [teamName, setTeam] = useState("")
   const [userName, setName] = useState("")
+  const [alternateNav, setNav] = useState(true)
 
   // get items from local storage
   useEffect(() => {
@@ -74,7 +76,7 @@ function App() {
       <Authentification.Provider value={{userID, setUserID}}>
       <Team.Provider value={{teamName, setTeam}}>
       <Name.Provider value={{userName, setName}}>
-
+      <Navbool.Provider value={{alternateNav, setNav}}>
 
         <Navigation></Navigation>
 
@@ -86,6 +88,7 @@ function App() {
           <Route path="/login" element={<LoginPage></LoginPage>}></Route>
         </Routes>
 
+      </Navbool.Provider>
       </Name.Provider>
       </Team.Provider>
       </Authentification.Provider>

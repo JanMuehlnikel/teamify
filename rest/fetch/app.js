@@ -101,11 +101,13 @@ app.post("/api/login", (req, res) => {
 
         try {
             userID = users.find(u => u.email == req.query.email)["userID"]
-            team_id = users.find(u => u.team == req.query.team)
+            team_id = users.find(u => u.userID == userID)["team"]
             prename = users.find(u => u.userID == userID)["prename"]
             lastname = users.find(u => u.userID == userID)["name"]
 
-            fullname = prename + " " + lastname   
+            fullname = prename + " " + lastname 
+            
+            console.log(team_id)
 
             res.send({ auth: userID, team: team_id, name: fullname})
 

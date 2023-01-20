@@ -1,0 +1,14 @@
+.navbar-brand {
+    text-align: center !important;
+    font-weight: bold;
+}
+
+#a-navbar{
+    font-weight: bold;
+    font-size: larger;
+}
+
+.nav-link{
+    color: rgb(0, 0, 0);
+}
+

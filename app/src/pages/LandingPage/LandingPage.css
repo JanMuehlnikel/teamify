@@ -7,6 +7,13 @@
     padding-right: 40px;
 }
 
+#btn-test {
+    font-weight: bold;
+    background-color: #269AFF;
+    color: white;
+    border: none;
+}
+
 .t1 {
     margin-bottom: 20px;
     font-weight: bold;

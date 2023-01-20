@@ -3,12 +3,17 @@ import loginImage from "./team-fade.png"
 import "./LoginPage.css"
 import { useForm } from "react-hook-form";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Logging, Name } from "../../context/context";
+import { Logging, Name, Navbool } from "../../context/context";
 import { Authentification } from "../../context/context";
 import { useNavigate } from "react-router-dom";
 import { Team } from "../../context/context";
+import Footer from "../../components/Footer/Footer";
 
 function LoginPage() {
+
+    const { alternateNav, setNav } = useContext(Navbool)
+
+    setNav(true)
 
     const {loggedIn, setLoggedIn} = useContext(Logging)
     const {userID, setUserID} = useContext(Authentification)
@@ -91,7 +96,7 @@ function LoginPage() {
     }
 
     return (
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col" id="col-image">
 
@@ -142,6 +147,7 @@ function LoginPage() {
                   </form>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     )
 

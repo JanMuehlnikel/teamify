@@ -1,0 +1,22 @@
+.con-green {
+        text-align: center;
+        background-color: #67A97D;
+        color: rgb(247, 244, 244);
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+}
+
+.btn-navigate{
+    background-color: #67A97D;
+    border: 0;
+    color: white;
+    font-weight: bold;
+}
+
+.h1-header{
+    text-align: center !important;
+    font-weight: bold;
+    margin-bottom: 40px;
+}

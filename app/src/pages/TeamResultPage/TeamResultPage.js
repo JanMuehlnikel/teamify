@@ -1,12 +1,16 @@
 import React, { useContext } from "react";
 import useFetch from "react-fetch-hook";
 import { useNavigate } from "react-router-dom";
-import { Team } from "../../context/context";
+import { Navbool, Team } from "../../context/context";
 import { Logging } from "../../context/context";
 import { Authentification } from "../../context/context";
 import "./TeamResultPage.css"
 
 function TeamResultPage() {
+
+    const { alternateNav, setNav } = useContext(Navbool)
+
+    setNav(false)
 
     const { teamName, setTeam } = useContext(Team)
     const {loggedIn, setLoggedIn} = useContext(Logging)

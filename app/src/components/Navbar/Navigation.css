@@ -1,7 +1,7 @@
 .navbar {
     background-color: #E6E6E6 !important;
 }
-.navbar-brand {
+.mid {
     transform: translateX(-50%);
     left: 50%;
     position: absolute;
@@ -11,4 +11,8 @@
 #a-navbar{
     font-weight: bold;
     font-size: larger;
+}
+
+.nav-link{
+    color: black;
 }
