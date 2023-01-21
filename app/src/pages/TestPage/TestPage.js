@@ -91,8 +91,7 @@ function TestPage() {
     }
 
     if (error) {
-        navigate("/notloggedin")
-        console.log("Fehler beim laden der Userdaten! Bitte starte den Rest Server")
+        return <div>Fehler beim laden der Userdaten! Bitte starte den Rest Server</div>
     }
 
     function shownums(gruppen, searchedGroup) {

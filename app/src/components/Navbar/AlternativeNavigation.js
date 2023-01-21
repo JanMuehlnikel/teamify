@@ -57,9 +57,6 @@ function AlternativeNavigation() {
                     :
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Link class="nav-link" to="/test">Test durchführen</Link>
-                            <Link class="nav-link" to="/ergebnis">Ergebnis ansehen</Link>
-                            <Link class="nav-link" to="/teamergebnis">Team-Ergebnis ansehen</Link>
                         </Nav>
                         <Nav className="mr-auto">
                             <Link class="nav-link" to="/login">Anmelden</Link>

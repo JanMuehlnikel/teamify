@@ -26,13 +26,7 @@ function TeamResultPage() {
     }
 
     if (error) {
-        if (!loggedIn) {
-            navigate("/notloggedin")
-            console.log("Fehler beim laden der Userdaten! Bitte starte den Rest Server")
-        } else {
-            navigate("/noteam")
-            console.log("Fehler beim laden der Userdaten! Bitte starte den Rest Server")
-        }
+        return <h1>Fehler beim laden der USerdaten. Bitte starte den React Server oder melde dich an!</h1>
     }
 
     function getAuspraegung(auspraegung) {
