@@ -1,5 +1,5 @@
 #con-head {
-    background-color: #67A97D;
+    background: linear-gradient(to right, #67A97D,  rgba(0,0,0,0.5)), url("./banner.jpeg") no-repeat center center / cover;
     color: white;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -12,6 +12,10 @@
     background-color: #269AFF;
     color: white;
     border: none;
+}
+
+.card-img-top{
+    height: 70%;
 }
 
 .t1 {

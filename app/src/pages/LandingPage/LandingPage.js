@@ -5,6 +5,9 @@ import Footer from '../../components/Footer/Footer';
 
 import pic_testvorschau from "./test_vorschau.png"
 import pic_sicher from "./sicher.png"
+import pic1 from "./pic1.jpeg"
+import pic2 from "./pic2.jpeg"
+import pic3 from "./pic3.jpeg"
 import { useNavigate } from "react-router-dom";
 import { Navbool } from "../../context/context";
 
@@ -18,8 +21,8 @@ function LandingPage() {
 
     return (
         <div className="main">
-            <div class="container-fluid" id="con-head">
-                <div class="row">
+            <div class="container-fluid banner" id="con-head">
+                <div class="row header">
                     <div class="col">
                         <h1 class="t1">Das perfekte Team gibt es nicht?<br /> Falsch!</h1>
 
@@ -34,7 +37,7 @@ function LandingPage() {
             <div className="rand">
                 <div class="row row-c1 justify-content-center">
                     <div class="card">
-                        <img class="card-img-top" src="https://media.istockphoto.com/id/1322842973/photo/diverse-business-people-putting-their-hands-together-in-cirle.jpg?s=612x612&w=0&k=20&c=9BAYCv8tAsgYPQdTsFxLzLJsmt6tGYE5Etwd63OccxQ=" alt="Card image cap" />
+                        <img class="card-img-top" src={pic1}/>
                         <div class="card-body">
                             <h5 class="card-title">Direkter Vergleich</h5>
                             <p class="card-text">Sie können Ihr Ergebnis direkt mit Ihren
@@ -43,7 +46,7 @@ function LandingPage() {
                         </div>
                     </div>
                     <div class="card">
-                        <img class="card-img-top" src="https://media.istockphoto.com/id/1322842973/photo/diverse-business-people-putting-their-hands-together-in-cirle.jpg?s=612x612&w=0&k=20&c=9BAYCv8tAsgYPQdTsFxLzLJsmt6tGYE5Etwd63OccxQ=" alt="Card image cap" />
+                    <img class="card-img-top" src={pic2}/>
                         <div class="card-body">
                             <h5 class="card-title">Direktes Ergebnis</h5>
                             <p class="card-text">Unsere Software wird Ihnen sofort ein
@@ -52,7 +55,7 @@ function LandingPage() {
                         </div>
                     </div>
                     <div class="card">
-                        <img class="card-img-top" src="https://media.istockphoto.com/id/1322842973/photo/diverse-business-people-putting-their-hands-together-in-cirle.jpg?s=612x612&w=0&k=20&c=9BAYCv8tAsgYPQdTsFxLzLJsmt6tGYE5Etwd63OccxQ=" alt="Card image cap" />
+                    <img class="card-img-top" src={pic3}/>
                         <div class="card-body">
                             <h5 class="card-title">Jederzeit Wiederholbar</h5>
                             <p class="card-text">Der Test kann jederzeit wiederholt

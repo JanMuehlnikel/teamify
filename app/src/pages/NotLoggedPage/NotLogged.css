@@ -1,0 +1,17 @@
+.fehler{
+    font-weight: bold;
+    font-size: 5vw;
+}
+
+.el-footer{
+    width: 100%;
+    position: absolute; bottom: 0px; 
+}
+
+.register{
+    margin-top: 5vw;
+    width: 50%;
+    height: 3vw;
+    font-weight: bold;
+    font-size: larger
+}

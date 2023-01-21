@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Toast } from "react-bootstrap";
 import useFetch from "react-fetch-hook";
 import { useNavigate } from "react-router-dom";
 import { Navbool, Team } from "../../context/context";
@@ -25,7 +26,13 @@ function TeamResultPage() {
     }
 
     if (error) {
-        return <div>Fehler beim laden der Userdaten! Bitte starte den Rest Server</div>
+        if (!loggedIn) {
+            navigate("/notloggedin")
+            console.log("Fehler beim laden der Userdaten! Bitte starte den Rest Server")
+        } else {
+            navigate("/noteam")
+            console.log("Fehler beim laden der Userdaten! Bitte starte den Rest Server")
+        }
     }
 
     function getAuspraegung(auspraegung) {

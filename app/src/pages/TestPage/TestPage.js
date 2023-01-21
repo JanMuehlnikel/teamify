@@ -91,7 +91,8 @@ function TestPage() {
     }
 
     if (error) {
-        return <div>Fehler beim laden der Userdaten! Bitte starte den Rest Server</div>
+        navigate("/notloggedin")
+        console.log("Fehler beim laden der Userdaten! Bitte starte den Rest Server")
     }
 
     function shownums(gruppen, searchedGroup) {
@@ -281,12 +282,12 @@ function TestPage() {
                 </div>
 
                 <div class="col" id="col-abgabe">
-                <div class="row">
-                    <h2 className="cta">Erfahre jetzt deine individuelle Team-Persönlichkeit:</h2>
-                </div>
-                <div class="row justify-content-center">
-                    <button type="button" class="btn btn-primary btn-cta" id="button-lg" onClick={() => getResult()}>Los gehts!</button>
-                </div>
+                    <div class="row">
+                        <h2 className="cta">Erfahre jetzt deine individuelle Team-Persönlichkeit:</h2>
+                    </div>
+                    <div class="row justify-content-center">
+                        <button type="button" class="btn btn-primary btn-cta" id="button-lg" onClick={() => getResult()}>Los gehts!</button>
+                    </div>
                 </div>
                 <div class="col" id="col-abgabe">
                     <form onSubmit={handleSubmit(onSubmit)}>

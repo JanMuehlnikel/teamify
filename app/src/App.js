@@ -14,6 +14,8 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import ErgebnisPage from './pages/ErgebnisPage/ErgebnisPage';
 import TeamResultPage from './pages/TeamResultPage/TeamResultPage';
 import LoginPage from './pages/LoginPage/LoginPage';
+import NotLoggedPage from './pages/NotLoggedPage/NotLoggedPage';
+import NoGroupPage from './pages/NotLoggedPage/NoGroupPage';
 
 function App() {
   const [userID, setUserID] = useState("")
@@ -86,6 +88,9 @@ function App() {
           <Route path="/ergebnis" element={<ErgebnisPage></ErgebnisPage>}></Route>
           <Route path="/teamergebnis" element={<TeamResultPage></TeamResultPage>}></Route>
           <Route path="/login" element={<LoginPage></LoginPage>}></Route>
+          <Route path="/notloggedin" element={<NotLoggedPage></NotLoggedPage>}></Route>
+          <Route path="/noteam" element={<NoGroupPage></NoGroupPage>}></Route>
+
         </Routes>
 
       </Navbool.Provider>
