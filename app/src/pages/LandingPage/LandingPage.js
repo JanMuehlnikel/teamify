@@ -9,9 +9,11 @@ import pic1 from "./pic1.jpeg"
 import pic2 from "./pic2.jpeg"
 import pic3 from "./pic3.jpeg"
 import { useNavigate } from "react-router-dom";
-import { Navbool } from "../../context/context";
+import { Logging, Navbool } from "../../context/context";
 
 function LandingPage() {
+
+    const { loggedIn, setLoggedIn } = useContext(Logging)
 
     const navigate = useNavigate();
 
@@ -30,7 +32,11 @@ function LandingPage() {
                             perfektes Team, das genau auf ihre Bedürfnisse
                             angepasst ist.</h2>
 
-                        <button type="submit" class="btn btn-light btn-primary" id="btn-test" onClick={() => navigate("/test")}>Jetzt das perfekte Team finden</button>
+                            {loggedIn ? 
+                                <button type="submit" class="btn btn-light btn-primary" id="btn-test" onClick={() => navigate("/test")}>Jetzt das perfekte Team finden</button>
+                                :
+                                <button type="submit" class="btn btn-light btn-primary" id="btn-test" onClick={() => navigate("/login")}>Jetzt das perfekte Team finden</button>
+                                }
                     </div>
                 </div>
             </div>
@@ -98,7 +104,11 @@ function LandingPage() {
                             <h3 class="txt2">➧ Übersichtliche Darstellung des Teamergebnisses.</h3>
 
                             <div className="row justify-content-center">
+                                {loggedIn ? 
                                 <button type="submit" class="btn btn-light btn-primary" id="btn-vorteile" onClick={() => navigate("/test")}>Zum Test</button>
+                                :
+                                <button type="submit" class="btn btn-light btn-primary" id="btn-vorteile" onClick={() => navigate("/login")}>Jetzt registrieren</button>
+                                }
                             </div>
                         </div>
                     </div>
