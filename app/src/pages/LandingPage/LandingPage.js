@@ -37,7 +37,7 @@ function LandingPage() {
             <div className="rand">
                 <div class="row row-c1 justify-content-center">
                     <div class="card">
-                        <img class="card-img-top" src={pic1}/>
+                        <img class="card-img-top" src={pic1} />
                         <div class="card-body">
                             <h5 class="card-title">Direkter Vergleich</h5>
                             <p class="card-text">Sie können Ihr Ergebnis direkt mit Ihren
@@ -46,7 +46,7 @@ function LandingPage() {
                         </div>
                     </div>
                     <div class="card">
-                    <img class="card-img-top" src={pic2}/>
+                        <img class="card-img-top" src={pic2} />
                         <div class="card-body">
                             <h5 class="card-title">Direktes Ergebnis</h5>
                             <p class="card-text">Unsere Software wird Ihnen sofort ein
@@ -55,7 +55,7 @@ function LandingPage() {
                         </div>
                     </div>
                     <div class="card">
-                    <img class="card-img-top" src={pic3}/>
+                        <img class="card-img-top" src={pic3} />
                         <div class="card-body">
                             <h5 class="card-title">Jederzeit Wiederholbar</h5>
                             <p class="card-text">Der Test kann jederzeit wiederholt
@@ -89,7 +89,17 @@ function LandingPage() {
                             </div>
                         </div>
                         <div class="col col-info2">
-                            <h2 class="txt2">Vergleiche Deine Ergebnisse mit Deinem Team.</h2>
+                            <h2 class="txt2">Deine Vorteile</h2>
+                            <h3 class="txt2">➧ Finde deine individuelle persönlichkeit heraus.</h3>
+                            <h3 class="txt2">➧ Einfache Bedienung durch das intuitive Up- und Downvote System</h3>
+                            <h3 class="txt2">➧ Automatische Ermittlung des Ergebnisses</h3>
+                            <h3 class="txt2">➧ In unter 5 Minuten zum Ergebnis</h3>
+                            <h3 class="txt2">➧ Vergleiche Deine Ergebnisse innerhalb deines Teams.</h3>
+                            <h3 class="txt2">➧ Übersichtliche Darstellung des Teamergebnisses.</h3>
+
+                            <div className="row justify-content-center">
+                                <button type="submit" class="btn btn-light btn-primary" id="btn-vorteile" onClick={() => navigate("/test")}>Zum Test</button>
+                            </div>
                         </div>
                     </div>
                 </div>

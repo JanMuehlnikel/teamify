@@ -128,3 +128,13 @@ img {
     font-weight: bold;
     font-size: 6vw;
 }
+
+#btn-vorteile{
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    width: 50%;
+    font-weight: bold;
+    background-color: #269AFF;
+    color: white;
+    border: none;
+}
