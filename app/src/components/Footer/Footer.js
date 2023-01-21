@@ -21,7 +21,7 @@ function Footer() {
     return (
         <div class="container-fluid con-green">
 
-            <h1 class="h1-header">Teamify</h1>
+            <h2 class="h1-header">Teamify</h2>
             <div class="row">
   
                 <div class="col" />

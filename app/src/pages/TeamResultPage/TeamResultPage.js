@@ -13,8 +13,8 @@ function TeamResultPage() {
     setNav(false)
 
     const { teamName, setTeam } = useContext(Team)
-    const {loggedIn, setLoggedIn} = useContext(Logging)
-    const {userID, setUserID} = useContext(Authentification)
+    const { loggedIn, setLoggedIn } = useContext(Logging)
+    const { userID, setUserID } = useContext(Authentification)
 
     const navigate = useNavigate();
 
@@ -37,8 +37,6 @@ function TeamResultPage() {
 
                             <h5>{user.prename} {user.name}</h5>
                         </div>
-
-
                     )
                 }
             }))
@@ -46,54 +44,43 @@ function TeamResultPage() {
 
     return (
 
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col col-6" id="col-info-1">
-                    <h2>Hier siehst Du, wie Du in das Team passt.</h2>
+                <div class="col" id="col-info-1">
+                    <h2>Hier siehst du, wie du in das Team passt.</h2>
                 </div>
                 <div class="col" id="col-info-2">
-                    <h3>TeamID: {teamName}</h3>
+                    <h2>TeamID: <b>{teamName}</b></h2>
                 </div>
             </div>
+            <div class="row">
+                <div class="col">
+                    <div class="row" id="row-auspraegung">
+                        <h2>Rote Ausprägung - Dominant:</h2>
+                        {getAuspraegung("rot")}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row" id="row-auspraegung">
+                        <h2>Gelbe Ausprägung - Initiativ:</h2>
+                        {getAuspraegung("gelb")}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="row" id="row-auspraegung">
+                        <h2>Blaue Ausprägung - Gewissenhaft:</h2>
+                        {getAuspraegung("blau")}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row" id="row-auspraegung">
+                        <h2>Grüne Ausprägung - Stetig:</h2>
+                        {getAuspraegung("grün")}
 
-            <div class="row" id="row-r">
-                <h2>Was bedeutet das jetzt?</h2>
-                <div class="col" id="col-r">
-                    <h2>Dein Diagramm zeigt, dass die
-                        ??? Farbe besonders ausgeprägt
-                        ist. </h2>
+                    </div>
                 </div>
-                <div class="col" id="col-r">
-                    <h3>Das Wort, dass Dich am besten
-                        beschreibt ist: ???</h3>
-                </div>
-                <div class="col" id="col-r">
-                    <h3>Deine Eigenschaften sind:
-                        Analytisch, Reserviert, Präzise und
-                        Systematisch</h3>
-                </div>
-                <div class="col" id="col-r">
-                    <h3>Allerdings sind die anderen Farben
-                        ebenfalls vorhanden, das sollte man
-                        berücksichtigen. </h3>
-                </div>
-            </div>
-
-            <div class="row" id="row-auspraegung">
-                <h2>Rote Ausprägung</h2>
-                {getAuspraegung("rot")}
-            </div>
-            <div class="row" id="row-auspraegung">
-                <h2>Gelbe Ausprägung</h2>
-                {getAuspraegung("gelb")}
-            </div>
-            <div class="row" id="row-auspraegung">
-                <h2>Blaue Ausprägung</h2>
-                {getAuspraegung("blau")}
-            </div>
-            <div class="row" id="row-auspraegung">
-                <h2>Grüne Ausprägung</h2>
-                {getAuspraegung("grün")}
             </div>
         </div>
     )

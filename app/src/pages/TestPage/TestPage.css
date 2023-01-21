@@ -1,15 +1,28 @@
-.col  {
+h1 {
+    font-size: 5.9vw;
+  }
+  
+  h2 {
+    font-size: 3.0vh;
+  }
+  
+  h3 {
+    font-size: 2.0vh;
+  }
+
+.col {
     border-radius: 10px !important;
 }
 
-#col-info-1{
+#col-info-1 {
     width: 63%;
     background-color: #E6E6E6 !important;
     margin-right: 20px;
     margin-left: 20px;
 }
 
-#col-info-2{
+#col-info-2 {
+    width: 37%;
     margin-right: 20px;
     margin-left: 20px;
     background-color: #E6E6E6 !important;
@@ -17,56 +30,97 @@
     align-items: center;
 }
 
-#col-input{
-    background-color: #67A97D;
+@media (max-width: 1520px) {
+    #col-nums {
+        display: none
+    }
+
+    #col-gesamt {
+        font-size: small !important;
+        width: 33%;
+    }
+}
+
+#col-gesamt {
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
     margin-right: 20px;
-    margin-left: 20px;
-    margin-top: 20px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    color: white;
-    font-weight: bold;
 }
 
-#col-text{
+#col-nums {
+    text-align: center;
+    width: 10%;
+    text-align: center;
     background-color: #67A97D;
-    margin-right: 20px;
-    margin-left: 20px;
-    margin-top: 20px;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    text-align: left;
     color: white;
     font-weight: bold;
+    margin-right: 0.5vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
 }
 
-#col-number{
+#col-input {
+    width: 80%;
     background-color: #67A97D;
-    background-color: #67A97D;
-    margin-left: 20px;
-    margin-top: 20px;
-    padding-top: 10px;
-    padding-bottom: 5px;
     color: white;
-    font-weight: bold;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    white-space: nowrap;
 }
 
-#btn-updown{
+#btn-updown {
     background-color: #67A97D;
     outline: none;
     outline: none;
     border: none;
     color: white;
-    margin-left: 15px;
 }
 
-#col-abgabe{
-    background-color: #E6E6E6;
-    margin-right: 20px;
-    margin-left: 20px;
+.col-l {
+    background-color: black;
+}
+
+#col-abgabe {
+    width: 90% !important;
     margin-top: 20px;
-    padding-top: 10px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    background-color: #E6E6E6;
     color: black;
     font-weight: bold;
 }
+
+.cta{
+    width: 75%;
+    margin-bottom: 1vw;
+}
+
+.teamEingabe{
+    margin-left: 1vw;
+    background-color: #67A97D;
+}
+
+.einagbe{
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+#warnTeam {
+    color: rgb(255, 30, 0);
+    font-weight: normal;
+}
+
+.btn-cta{
+    width: 70%;
+    font-weight: bold;
+    background-color: #269AFF;
+    color: white;
+    border: none;
+}
+

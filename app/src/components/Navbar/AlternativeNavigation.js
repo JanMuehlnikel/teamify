@@ -24,6 +24,7 @@ function AlternativeNavigation() {
         setLoggedIn(false)
         setUserID("")
         setName("")
+        setTeam("")
     }
 
     const navigate = useNavigate();
@@ -62,7 +63,7 @@ function AlternativeNavigation() {
                         </Nav>
                         <Nav className="mr-auto">
                             <Link class="nav-link" to="/login">Anmelden</Link>
-                            <Link class="nav-link" to="/register">Registrieren</Link>
+                            <Link class="nav-link" to="/login">Registrieren</Link>
                         </Nav>
                     </Navbar.Collapse>
                 }

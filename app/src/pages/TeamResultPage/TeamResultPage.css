@@ -7,6 +7,7 @@
 }
 
 #col-info-1{
+    width: 50%;
     background-color: #E6E6E6;
     margin-right: 20px;
     margin-left: 20px;
@@ -18,6 +19,7 @@
 }
 
 #col-info-2{
+    width: 50%;
     background-color: #E6E6E6;
     margin-right: 20px;
     margin-left: 20px;

@@ -1,56 +1,127 @@
-#col-ergebnis{
+h1 {
+    font-size: 5.9vw;
+}
+
+h2 {
+    font-size: 3.0vh;
+}
+
+h3 {
+    font-size: 2.0vh;
+}
+
+#col-info-1 {
+    width: 63%;
+    background-color: #E6E6E6 !important;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 1vw;
+}
+
+#col-info-2 {
+    width: 37%;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-bottom: 1vw;
+    background-color: #E6E6E6 !important;
+    display: flex;
+    align-items: center;
+}
+
+#btn-wiederholen{
+    width: 100%;
+    font-weight: bold;
+    background-color: #269AFF;
+    color: white;
+    border: none;
+}
+
+#col-ergebnis {
     background-color: #E6E6E6;
     text-align: center;
     margin-right: 20px;
     margin-left: 20px;
     margin-top: 20px;
-    padding-top: 10px;
-    padding-bottom: 30px;
-    color: white;
+    padding-top: 1vw;
+    color: rgb(0, 0, 0);
     font-weight: bold;
 }
 
-#col-red{
+#col-red {
     background-color: #ff0000;
     text-align: center;
     margin-right: 20px;
     margin-left: 20px;
     margin-top: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
     color: white;
     font-weight: bold;
 }
-#col-yellow{
+
+#col-yellow {
     background-color: #ffcc00;
     text-align: center;
     margin-right: 20px;
     margin-left: 20px;
     margin-top: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
     color: white;
     font-weight: bold;
 }
-#col-blue{
+
+#col-blue {
     background-color: #003cff;
     text-align: center;
     margin-right: 20px;
     margin-left: 20px;
     margin-top: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
     color: white;
     font-weight: bold;
 }
-#col-green{
+
+#col-green {
     background-color: #008b05;
     text-align: center;
     margin-right: 20px;
     margin-left: 20px;
     margin-top: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
     color: white;
     font-weight: bold;
+}
+
+#col-bedeutung {
+    text-align: center;
+    background-color: #67A97D;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+}
+
+.col-txt1 {
+    text-align: left;
+    background-color: #E6E6E6;
+    color: black;
+    font-weight: normal;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.row-ergebnis{
+    overflow: hidden; 
 }
