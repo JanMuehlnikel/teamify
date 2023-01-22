@@ -22,36 +22,40 @@ function TestPage() {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     function buttonUp(gruppe, old_id) {
-        fetch(ADRESS + "/api/users/buttonUP?" +
-            "userID=" + userID +
-            "&gruppe=" + gruppe +
-            "&id=" + old_id,
-            {
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                method: "POST",
-            })
-            .then(function (res) { window.location.reload() })
-            .catch(function (res) { })
+        if (old_id != 4) {
+            fetch(ADRESS + "/api/users/buttonUP?" +
+                "userID=" + userID +
+                "&gruppe=" + gruppe +
+                "&id=" + old_id,
+                {
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    method: "POST",
+                })
+                .then(function (res) { window.location.reload() })
+                .catch(function (res) { })
+        }
     }
 
     function buttonDown(gruppe, old_id) {
-        console.log(gruppe, old_id)
-        fetch(ADRESS + "/api/users/buttonDown?" +
-            "userID=" + userID +
-            "&gruppe=" + gruppe +
-            "&id=" + old_id,
-            {
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                method: "POST",
-            })
-            .then(function (res) { window.location.reload() })
-            .catch(function (res) { })
+        if (old_id != 1) {
+
+            fetch(ADRESS + "/api/users/buttonDown?" +
+                "userID=" + userID +
+                "&gruppe=" + gruppe +
+                "&id=" + old_id,
+                {
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    method: "POST",
+                })
+                .then(function (res) { window.location.reload() })
+                .catch(function (res) { })
+        }
     }
 
 
@@ -77,7 +81,8 @@ function TestPage() {
                     },
                     method: "POST",
                 })
-                .then(function (res) { window.location.reload() })
+                .then(function (res) { 
+                    window.location.reload() })
                 .catch(function (res) { })
 
             navigate("/teamergebnis")
@@ -87,11 +92,12 @@ function TestPage() {
     }
 
     if (isLoading) {
-        return <div>IS loading</div>
+        return <h2>Loading ...</h2>
     }
 
     if (error) {
-        return <div>Fehler beim laden der Userdaten! Bitte starte den Rest Server</div>
+        navigate("/test")
+        return <h2>Loading ... If the process takes too long please try to refresh the page!</h2>
     }
 
     function shownums(gruppen, searchedGroup) {

@@ -208,7 +208,7 @@ app.get('/api/user/getgroup/:userID', (req, res) => {
 
     const group_array = users.find(u => u.userID == req.params.userID)["groups"]
 
-    res.send(group_array)
+    res.status(200).send(group_array)
 });
 
 // Get Result

@@ -22,11 +22,11 @@ function TeamResultPage() {
     const { isLoading, data, error } = useFetch(ADRESS + "/api/user/getteamresult/" + teamName);
 
     if (isLoading) {
-        return <div>IS loading</div>
+        return <h2>Loading ...</h2>
     }
 
     if (error) {
-        return <h1>Fehler beim laden der Userdaten. Bitte starte den React Server oder melde dich an!</h1>
+        return <h2>Loading ... If the process takes too long please try to refresh the page!</h2>
     }
 
     function getAuspraegung(auspraegung) {

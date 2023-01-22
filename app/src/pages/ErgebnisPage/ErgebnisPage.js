@@ -10,7 +10,9 @@ function ErgebnisPage() {
 
     const { loggedIn, setLoggedIn } = useContext(Logging)
     const { userID, setUserID } = useContext(Authentification)
+    
     const { isLoading, data, error } = useFetch(ADRESS + "/api/user/getresult/" + userID);
+
     const { alternateNav, setNav } = useContext(Navbool)
 
     setNav(false)
@@ -18,12 +20,11 @@ function ErgebnisPage() {
     const navigate = useNavigate();
 
     if (isLoading) {
-        return <div>IS loading</div>
+        return <h2>Loading ...</h2>
     }
 
     if (error) {
-        navigate("/notloggedin")
-        console.log("Fehler beim laden der Userdaten! Bitte starte den Rest Server")
+        return <h2>Loading ... If the process takes too long please try to refresh the page!</h2>
     }
 
     function getResultColor(resultArray) {
