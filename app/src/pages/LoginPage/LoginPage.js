@@ -109,7 +109,6 @@ function LoginPage() {
 
     return (
         <div className="main">
-            <h1>TEEEEEST</h1>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col" id="col-image">
