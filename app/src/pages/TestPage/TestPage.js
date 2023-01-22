@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import useFetch from "react-fetch-hook";
 import "./TestPage.css"
 import { useNavigate } from "react-router-dom";
-import { Navbool, Team } from "../../context/context";
+import { ADRESS, Navbool, Team } from "../../context/context";
 import { useForm } from "react-hook-form";
 import { Logging } from "../../context/context";
 import { Authentification } from "../../context/context";
@@ -22,7 +22,7 @@ function TestPage() {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     function buttonUp(gruppe, old_id) {
-        fetch("http://localhost:8080/api/users/buttonUP?" +
+        fetch(ADRESS + "/api/users/buttonUP?" +
             "userID=" + userID +
             "&gruppe=" + gruppe +
             "&id=" + old_id,
@@ -39,7 +39,7 @@ function TestPage() {
 
     function buttonDown(gruppe, old_id) {
         console.log(gruppe, old_id)
-        fetch("http://localhost:8080/api/users/buttonDown?" +
+        fetch(ADRESS + "/api/users/buttonDown?" +
             "userID=" + userID +
             "&gruppe=" + gruppe +
             "&id=" + old_id,
@@ -55,7 +55,7 @@ function TestPage() {
     }
 
 
-    const { isLoading, data, error } = useFetch("http://localhost:8080/api/user/getgroup/" + userID);
+    const { isLoading, data, error } = useFetch(ADRESS + "/api/user/getgroup/" + userID);
 
     function getResult() {
         navigate("/ergebnis")
@@ -67,7 +67,7 @@ function TestPage() {
             setTeam(data.team)
 
 
-            fetch("http://localhost:8080/api/users/team?" +
+            fetch(ADRESS + "/api/users/team?" +
                 "userID=" + userID +
                 "&team=" + data.team,
                 {

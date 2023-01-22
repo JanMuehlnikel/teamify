@@ -4,12 +4,13 @@ import "./ErgebnisPage.css"
 import { Logging, Navbool } from "../../context/context";
 import { Authentification } from "../../context/context";
 import { useNavigate } from "react-router-dom";
+import { ADRESS } from "../../context/context";
 
 function ErgebnisPage() {
 
     const { loggedIn, setLoggedIn } = useContext(Logging)
     const { userID, setUserID } = useContext(Authentification)
-    const { isLoading, data, error } = useFetch("http://localhost:8080/api/user/getresult/" + userID);
+    const { isLoading, data, error } = useFetch(ADRESS + "/api/user/getresult/" + userID);
     const { alternateNav, setNav } = useContext(Navbool)
 
     setNav(false)

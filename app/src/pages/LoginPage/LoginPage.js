@@ -8,6 +8,7 @@ import { Authentification } from "../../context/context";
 import { useNavigate } from "react-router-dom";
 import { Team } from "../../context/context";
 import Footer from "../../components/Footer/Footer";
+import { ADRESS } from "../../context/context";
 
 function LoginPage() {
 
@@ -31,7 +32,7 @@ function LoginPage() {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onLogin = loginData => {
-        fetch("http://localhost:8080/api/login?" +
+        fetch(ADRESS + "/api/login?" +
             "email=" + loginData.loginEmail +
             "&password=" + loginData.loginPassword,
             {
@@ -73,7 +74,7 @@ function LoginPage() {
             registerData.password.replace(/\s/g, '') != ""
         ) {
 
-            fetch("http://localhost:8080/api/register?" +
+            fetch(ADRESS + "/api/register?" +
                 "userID=" + generatedID +
                 "&prename=" + registerData.prename +
                 "&name=" + registerData.name +

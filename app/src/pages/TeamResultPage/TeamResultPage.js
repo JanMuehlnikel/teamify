@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Toast } from "react-bootstrap";
 import useFetch from "react-fetch-hook";
 import { useNavigate } from "react-router-dom";
-import { Navbool, Team } from "../../context/context";
+import { ADRESS, Navbool, Team } from "../../context/context";
 import { Logging } from "../../context/context";
 import { Authentification } from "../../context/context";
 import "./TeamResultPage.css"
@@ -19,7 +19,7 @@ function TeamResultPage() {
 
     const navigate = useNavigate();
 
-    const { isLoading, data, error } = useFetch("http://localhost:8080/api/user/getteamresult/" + teamName);
+    const { isLoading, data, error } = useFetch(ADRESS + "/api/user/getteamresult/" + teamName);
 
     if (isLoading) {
         return <div>IS loading</div>
