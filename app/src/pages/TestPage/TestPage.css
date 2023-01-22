@@ -30,18 +30,9 @@ h3 {
     align-items: center;
 }
 
-@media (max-width: 1520px) {
-    #col-nums {
-        display: none
-    }
-
-    #col-gesamt {
-        font-size: small !important;
-        width: 33%;
-    }
-}
-
 #col-gesamt {
+    min-width: 380px;
+    max-width: 480px;
     color: white;
     font-weight: bold;
     margin-top: 20px;
@@ -51,6 +42,7 @@ h3 {
 }
 
 #col-nums {
+    max-width: 50px;
     text-align: center;
     width: 10%;
     text-align: center;
@@ -77,6 +69,8 @@ h3 {
     outline: none;
     border: none;
     color: white;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 .col-l {
@@ -117,6 +111,15 @@ h3 {
 }
 
 .btn-cta {
+    width: 70%;
+    font-weight: bold;
+    background-color: #269AFF;
+    color: white;
+    border: none;
+}
+
+.btn-cta1 {
+    min-width: 100px;
     width: 70%;
     font-weight: bold;
     background-color: #269AFF;

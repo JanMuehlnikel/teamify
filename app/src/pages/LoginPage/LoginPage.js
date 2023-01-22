@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { Team } from "../../context/context";
 import Footer from "../../components/Footer/Footer";
 import { ADRESS } from "../../context/context";
+import AlternativeNavigation from "../../components/Navbar/AlternativeNavigation";
 
 function LoginPage() {
 
@@ -108,8 +109,9 @@ function LoginPage() {
     }
 
     return (
+        
         <div className="main">
-            <div class="container-fluid">
+            <div class="container-fluid background">
                 <div class="row">
                     <div class="col" id="col-image">
 
@@ -166,8 +168,8 @@ function LoginPage() {
                         </form>
                     </div>
                 </div>
+                <Footer></Footer>
             </div>
-            <Footer></Footer>
         </div>
 
 

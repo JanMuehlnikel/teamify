@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { ADRESS, Navbool, Team } from "../../context/context";
 import { Logging } from "../../context/context";
 import { Authentification } from "../../context/context";
+import NoGroupPage from "../NotLoggedPage/NoGroupPage";
 import "./TeamResultPage.css"
 
 function TeamResultPage() {
@@ -26,7 +27,12 @@ function TeamResultPage() {
     }
 
     if (error) {
-        return <h2>Loading ... If the process takes too long please try to refresh the page!</h2>
+
+        if (teamName == ""){
+            return <NoGroupPage></NoGroupPage>
+        }else{
+            return <h2>Loading ... If the process takes too long please try to refresh the page!</h2>
+        }
     }
 
     function getAuspraegung(auspraegung) {

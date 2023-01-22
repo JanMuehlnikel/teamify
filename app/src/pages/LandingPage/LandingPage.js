@@ -32,7 +32,7 @@ function LandingPage() {
                             perfektes Team, das genau auf ihre Bedürfnisse
                             angepasst ist.</h2>
 
-                            {loggedIn ? 
+                            {loggedIn == "true" ? 
                                 <button type="submit" class="btn btn-light btn-primary" id="btn-test" onClick={() => navigate("/test")}>Jetzt das perfekte Team finden</button>
                                 :
                                 <button type="submit" class="btn btn-light btn-primary" id="btn-test" onClick={() => navigate("/login")}>Jetzt das perfekte Team finden</button>
@@ -104,7 +104,7 @@ function LandingPage() {
                             <h3 class="txt2">➧ Übersichtliche Darstellung des Teamergebnisses.</h3>
 
                             <div className="row justify-content-center">
-                                {loggedIn ? 
+                                {loggedIn == "true" ? 
                                 <button type="submit" class="btn btn-light btn-primary" id="btn-vorteile" onClick={() => navigate("/test")}>Zum Test</button>
                                 :
                                 <button type="submit" class="btn btn-light btn-primary" id="btn-vorteile" onClick={() => navigate("/login")}>Jetzt registrieren</button>

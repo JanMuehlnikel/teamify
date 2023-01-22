@@ -6,6 +6,7 @@ import { ADRESS, Navbool, Team } from "../../context/context";
 import { useForm } from "react-hook-form";
 import { Logging } from "../../context/context";
 import { Authentification } from "../../context/context";
+import NotLoggedPage from "../NotLoggedPage/NotLoggedPage";
 
 function TestPage() {
 
@@ -81,8 +82,9 @@ function TestPage() {
                     },
                     method: "POST",
                 })
-                .then(function (res) { 
-                    window.location.reload() })
+                .then(function (res) {
+                    window.location.reload()
+                })
                 .catch(function (res) { })
 
             navigate("/teamergebnis")
@@ -96,8 +98,11 @@ function TestPage() {
     }
 
     if (error) {
-        navigate("/test")
-        return <h2>Loading ... If the process takes too long please try to refresh the page!</h2>
+        if (loggedIn == "false") {
+            return <NotLoggedPage></NotLoggedPage>
+        } else {
+            return <h2>Loading ... If the process takes too long please try to refresh the page!</h2>
+        }
     }
 
     function shownums(gruppen, searchedGroup) {
@@ -127,8 +132,12 @@ function TestPage() {
                             <h2 id="a-input">{eigenschaft.name}</h2>
                         </div>
                         <div class="col" id="col-buttons">
-                            <button type="button" class="float-end" id="btn-updown" onClick={() => buttonDown(searchedGroup, eigenschaft.id)}><h3>▼</h3></button>
-                            <button type="button" class="float-end" id="btn-updown" onClick={() => buttonUp(searchedGroup, eigenschaft.id)}><h3>▲</h3></button>
+                            {/*<button type="button" class="float-end" id="btn-updown" onClick={() => buttonDown(searchedGroup, eigenschaft.id)}><h3>▼</h3></button>*/}
+                            {eigenschaft.id != 4 ?
+                                <button type="button" class="float-end" id="btn-updown" onClick={() => buttonUp(searchedGroup, eigenschaft.id)}><h3>▲</h3></button>
+                                :
+                                <a></a>
+                            }
 
                         </div>
                     </div>
@@ -302,7 +311,7 @@ function TestPage() {
                                 <input {...register("team")} type="text" class="form-control einagbe" placeholder="TeamID" aria-label="TeamID" aria-describedby="basic-addon1" />
                             </div>
                             <div class="col justify-content-center">
-                                <button class="btn btn-primary btn-cta" id="button-lg" type="submit button">Los gehts!</button>
+                                <button class="btn btn-primary btn-cta1" id="button-lg" type="submit button">Los gehts!</button>
                             </div>
                         </div>
                         {teamButtonError()}

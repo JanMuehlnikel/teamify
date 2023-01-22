@@ -31,11 +31,13 @@ h3 {
 }
 
 #btn-wiederholen{
-    width: 100%;
+    width: 80%;
     font-weight: bold;
     background-color: #269AFF;
     color: white;
     border: none;
+    margin-left: 2vw;
+    margin-right: 2vw;
 }
 
 #col-ergebnis {

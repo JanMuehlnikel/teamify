@@ -5,6 +5,8 @@ import { Logging, Navbool } from "../../context/context";
 import { Authentification } from "../../context/context";
 import { useNavigate } from "react-router-dom";
 import { ADRESS } from "../../context/context";
+import NotLoggedPage from "../NotLoggedPage/NotLoggedPage";
+import Footer from "../../components/Footer/Footer";
 
 function ErgebnisPage() {
 
@@ -24,7 +26,11 @@ function ErgebnisPage() {
     }
 
     if (error) {
-        return <h2>Loading ... If the process takes too long please try to refresh the page!</h2>
+        if (loggedIn == "false"){
+            return <NotLoggedPage></NotLoggedPage>
+        }else{
+            return <h2>Loading ... If the process takes too long please try to refresh the page!</h2>
+        }
     }
 
     function getResultColor(resultArray) {
@@ -142,8 +148,6 @@ function ErgebnisPage() {
                     </div>
                 </div>
             </div >
-
-
         )
     }
 
