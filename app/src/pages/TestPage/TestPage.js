@@ -176,7 +176,7 @@ function TestPage() {
                 </div>
             </div>
 
-            <div class="row ">
+            <div class="row erg">
                 <div class="col" id="col-gesamt">
                     <div class="row justify-content-center">
                         <div class="col col-1 " id="col-nums">
@@ -211,7 +211,7 @@ function TestPage() {
                 </div>
             </div>
 
-            <div class="row ">
+            <div class="row erg">
                 <div class="col" id="col-gesamt">
                     <div class="row justify-content-center">
                         <div class="col col-1 " id="col-nums">
@@ -246,7 +246,7 @@ function TestPage() {
                 </div>
             </div>
 
-            <div class="row ">
+            <div class="row erg">
                 <div class="col" id="col-gesamt">
                     <div class="row justify-content-center">
                         <div class="col col-1 " id="col-nums">
@@ -283,7 +283,7 @@ function TestPage() {
 
 
 
-            <div class="row">
+            <div class="row erg">
                 <div class="col" id="col-gesamt">
                     <div class="row justify-content-center">
                         <div class="col col-1 " id="col-nums">

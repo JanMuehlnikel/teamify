@@ -30,10 +30,29 @@ h3 {
     align-items: center;
 }
 
+@media screen and (max-width: 1260px) {
+    #col-gesamt {
+        justify-content: center;
+        min-width: 800px !important;
+        max-width: 800px !important;
+    }
+    .erg{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    #col-gesamt {
+        justify-content: center;
+        min-width: 380px !important;
+        max-width: 480px !important;
+    }
+}
+
 #col-gesamt {
     min-width: 380px;
     max-width: 480px;
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -78,6 +97,7 @@ h3 {
 }
 
 #col-abgabe {
+    min-width: 400px;
     width: 90% !important;
     margin-top: 20px;
     margin-bottom: 20px;
