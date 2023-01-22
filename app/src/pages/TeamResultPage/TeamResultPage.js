@@ -26,7 +26,7 @@ function TeamResultPage() {
     }
 
     if (error) {
-        return <h1>Fehler beim laden der USerdaten. Bitte starte den React Server oder melde dich an!</h1>
+        return <h1>Fehler beim laden der Userdaten. Bitte starte den React Server oder melde dich an!</h1>
     }
 
     function getAuspraegung(auspraegung) {
