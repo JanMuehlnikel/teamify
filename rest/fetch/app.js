@@ -73,7 +73,7 @@ app.post("/api/register", (req, res) => {
                 group6: [{ color: "rot", name: "Ergebnisorientiert", id: 1 }, { color: "grün", name: "Beständig", id: 2 }, { color: "gelb", name: "Enthusiastisch", id: 4 }, { color: "blau", name: "Selbstdiszipliniert", id: 3 }],
                 group7: [{ color: "gelb", name: "Positiv", id: 1 }, { color: "rot", name: "Risikofreudig", id: 2 }, { color: "blau", name: "Zurückhaltend", id: 4 }, { color: "grün", name: "Unterstützend", id: 3 }],
                 group8: [{ color: "blau", name: "Kritisch", id: 1 }, { color: "gelb", name: "Impulsiv", id: 2 }, { color: "grün", name: "Zuverlässig", id: 4 }, { color: "rot", name: "Zielorientiert", id: 3 }],
-                group9: [{ color: "gelb", name: "Gesellig", id: 1 }, { color: "grün", name: "Unauffällig", id: 2 }, { color: "rot", name: "Furchtlos", id: 4 }, { color: "blau", name: "Struckturiert", id: 3 }],
+                group9: [{ color: "gelb", name: "Gesellig", id: 1 }, { color: "grün", name: "Unauffällig", id: 2 }, { color: "rot", name: "Furchtlos", id: 4 }, { color: "blau", name: "Strukturiert", id: 3 }],
                 group10: [{ color: "rot", name: "Hardnäckig", id: 1 }, { color: "gelb", name: "Überzeugend", id: 2 }, { color: "blau", name: "Planend", id: 4 }, { color: "grün", name: "Vermittelnd", id: 3 }],
     
             }

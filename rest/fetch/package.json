@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node simple-express-server.js",
-    "dev": "nodemon simple-express-server.js",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "dev": "nodemon simple-express-server.js"
   },
   "repository": {
     "type": "git",
