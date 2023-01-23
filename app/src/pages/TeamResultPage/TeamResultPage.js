@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Toast } from "react-bootstrap";
 import useFetch from "react-fetch-hook";
 import { useNavigate } from "react-router-dom";
-import { ADRESS, Navbool, Team } from "../../context/context";
+import { ADRESS, Name, Navbool, Team } from "../../context/context";
 import { Logging } from "../../context/context";
 import { Authentification } from "../../context/context";
 import NoGroupPage from "../NotLoggedPage/NoGroupPage";
@@ -17,6 +17,7 @@ function TeamResultPage() {
     const { teamName, setTeam } = useContext(Team)
     const { loggedIn, setLoggedIn } = useContext(Logging)
     const { userID, setUserID } = useContext(Authentification)
+    const { userName, setName } = useContext(Name)
 
     const navigate = useNavigate();
 
@@ -28,9 +29,9 @@ function TeamResultPage() {
 
     if (error) {
 
-        if (teamName == ""){
+        if (teamName == "") {
             return <NoGroupPage></NoGroupPage>
-        }else{
+        } else {
             return <h2>Loading ... If the process takes too long please try to refresh the page!</h2>
         }
     }
@@ -39,12 +40,25 @@ function TeamResultPage() {
         return (
             data.map(user => {
                 if (user.color == auspraegung) {
-                    return (
-                        <div class="col col-md-auto" id="col-name">
+                    console.log(userName)
+                    console.log(user.prename + " " + user.name)
+                    if (userName == user.prename + " " + user.name) {
+                        return (
+                            <div class="col col-md-auto currentUser" id="col-name">
 
-                            <h5>{user.prename} {user.name}</h5>
-                        </div>
-                    )
+                                <h5>{user.prename} {user.name}</h5>
+                            </div>
+                        )
+
+                    } else {
+
+                        return (
+                            <div class="col col-md-auto" id="col-name">
+
+                                <h5>{user.prename} {user.name}</h5>
+                            </div>
+                        )
+                    }
                 }
             }))
     }
@@ -60,30 +74,30 @@ function TeamResultPage() {
                     <h2>TeamID: <b>{teamName}</b></h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
+            <div class="row a1">
+                <div class="col c-farbe">
                     <div class="row" id="row-auspraegung">
                         <h2><a className="rot">Rote Ausprägung</a> - Dominant:</h2>
                         {getAuspraegung("rot")}
                     </div>
                 </div>
-                <div class="col">
+                <div class="col c-farbe">
                     <div class="row" id="row-auspraegung">
                         <h2><a className="gelb">Gelbe Ausprägung</a> - Initiativ:</h2>
                         {getAuspraegung("gelb")}
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
+            <div class="row a2">
+                <div class="col c-farbe">
                     <div class="row" id="row-auspraegung">
-                    <h2><a className="grün">Grüne Ausprägung</a> - Stetig:</h2>
+                        <h2><a className="grün">Grüne Ausprägung</a> - Stetig:</h2>
                         {getAuspraegung("grün")}
                     </div>
                 </div>
-                <div class="col">
+                <div class="col c-farbe">
                     <div class="row" id="row-auspraegung">
-                    <h2><a className="blau">Blaue Ausprägung</a> - Gewissenhaft:</h2>
+                        <h2><a className="blau">Blaue Ausprägung</a> - Gewissenhaft:</h2>
                         {getAuspraegung("blau")}
 
                     </div>

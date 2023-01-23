@@ -12,6 +12,8 @@ import { Navbool } from '../../context/context';
 import { Name } from '../../context/context';
 import AlternativeNavigation from "./AlternativeNavigation";
 
+import { useNavigate } from "react-router-dom";
+
 import logo from "./logo.jpeg"
 
 
@@ -22,11 +24,13 @@ function Navigation() {
     const { userName, setName } = useContext(Name)
     const { alternateNav, setNav } = useContext(Navbool)
 
+    const navigate = useNavigate();
+
 
     if (alternateNav) {
         return (
             <AlternativeNavigation></AlternativeNavigation>
-            )
+        )
     } else {
 
         return (
@@ -39,7 +43,9 @@ function Navigation() {
                             <a id="a-navbar">Hallo, {userName}!</a>
                         </ul>
                         <form class="d-flex">
-                            <img height="50px" width="50px" src="https://cdn-icons-png.flaticon.com/512/4128/4128244.png" />
+                            <button class="btn-profile" onClick={() => navigate("/login")}>
+                                <img height="50px" width="50px" src="https://cdn-icons-png.flaticon.com/512/4128/4128244.png" />
+                            </button>
                         </form>
                     </div>
                 </div>

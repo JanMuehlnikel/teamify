@@ -1,12 +1,12 @@
-.col  {
+.col {
     border-radius: 10px !important;
 }
 
-.row  {
+.row {
     border-radius: 10px !important;
 }
 
-#col-info-11{
+#col-info-11 {
     width: 50%;
     background-color: #E6E6E6;
     margin-right: 20px;
@@ -18,7 +18,7 @@
     font-weight: bold;
 }
 
-#col-info-22{
+#col-info-22 {
     width: 50%;
     background-color: #E6E6E6;
     margin-right: 20px;
@@ -31,34 +31,38 @@
 }
 
 @media screen and (max-width: 800px) {
-    #col-info-11{
+    #col-info-11 {
         max-width: 500px;
         min-width: 500px;
     }
-    #col-info-22{
+
+    #col-info-22 {
         max-width: 500px;
         min-width: 500px;
     }
-    .rcon{
+
+    .rcon {
         justify-content: center;
     }
 }
 
 @media screen and (max-width: 600px) {
-    #col-info-11{
+    #col-info-11 {
         max-width: 400px;
         min-width: 400px;
     }
-    #col-info-22{
+
+    #col-info-22 {
         max-width: 400px;
         min-width: 400px;
     }
-    .rcon{
+
+    .rcon {
         justify-content: center;
     }
 }
 
-#row-r{
+#row-r {
     background-color: #E6E6E6 !important;
     margin-right: 20px;
     margin-left: 20px;
@@ -70,7 +74,7 @@
     font-weight: bold;
 }
 
-#col-r{
+#col-r {
     background-color: #67A97D !important;
     margin-right: 20px;
     margin-left: 20px;
@@ -82,18 +86,19 @@
     font-weight: bold;
 }
 
-#row-auspraegung{
+#row-auspraegung {
     background-color: #E6E6E6;
     margin-right: 20px;
     margin-left: 20px;
     margin-top: 20px;
+    margin-bottom: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: left;
     font-weight: bold;
 }
 
-#col-name{
+#col-name {
     column-width: 30%;
     background-color: #67A97D;
     color: white;
@@ -106,37 +111,50 @@
     font-weight: bold;
 }
 
-.rot{
+.currentUser{
+    border: solid;
+    border-width: 3px !important;
+    border-color: #ffffff !important;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.rot {
     color: #ff0000;
     text-decoration: none !important;
 }
-.gelb{
+
+.gelb {
     color: #ffcc00;
     text-decoration: none !important;
 }
-.blau{
+
+.blau {
     color: #003cff;
     text-decoration: none !important;
 }
-.grün{
+
+.grün {
     color: #008b05;
     text-decoration: none !important;
 }
 
-
-.rot:hover{
+.rot:hover {
     color: #ff0000;
     text-decoration: none !important;
 }
-.gelb:hover{
+
+.gelb:hover {
     color: #ffcc00;
     text-decoration: none !important;
 }
-.blau:hover{
+
+.blau:hover {
     color: #003cff;
     text-decoration: none !important;
 }
-.grün:hover{
+
+.grün:hover {
     color: #008b05;
     text-decoration: none !important;
 }
@@ -145,4 +163,4 @@
 a:hover {
     background-color: none !important;
     text-decoration: none !important;
-  }
+}
