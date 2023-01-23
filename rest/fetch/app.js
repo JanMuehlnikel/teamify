@@ -4,33 +4,6 @@ const path = require('path');
 const { send } = require('process');
 
 let users = [
-    {
-        userID: "user1", prename: "Jan", name: "Mühlnikel", email: "jan.muehlnikel@gmx.de", password: "jan2001",
-        team: "",
-        groups:
-        {
-            group1: [{ color: "gelb", name: "Optimistisch", id: 2 }, { color: "rot", name: "Selbstsicher", id: 1 }, { color: "blau", name: "Genau", id: 4 }, { color: "grün", name: "Harmonisch", id: 3 }],
-            group2: [{ color: "blau", name: "Nachdenken", id: 1 }, { color: "gelb", name: "Kontaktfreudig", id: 2 }, { color: "grün", name: "Zuhörend", id: 4 }, { color: "rot", name: "Wagemutig", id: 3 }],
-            group3: [{ color: "grün", name: "Geduldig", id: 1 }, { color: "gelb", name: "Spontan", id: 2 }, { color: "rot", name: "Entscheidungsfreudig", id: 4 }, { color: "blau", name: "Kontrolliert", id: 3 }],
-            group4: [{ color: "rot", name: "Bestimmend", id: 1 }, { color: "blau", name: "Sorgfältig", id: 2 }, { color: "grün", name: "Teamfähig", id: 4 }, { color: "gelb", name: "Begeistert", id: 3 }],
-            group5: [{ color: "grün", name: "Vertrauensvoll", id: 1 }, { color: "blau", name: "Analytisch", id: 2 }, { color: "gelb", name: "Beliebt", id: 4 }, { color: "rot", name: "Kraftvoll", id: 3 }],
-            group6: [{ color: "rot", name: "Ergebnisorientiert", id: 1 }, { color: "grün", name: "Beständig", id: 2 }, { color: "gelb", name: "Enthusiastisch", id: 4 }, { color: "blau", name: "Selbstdiszipliniert", id: 3 }],
-            group7: [{ color: "gelb", name: "Positiv", id: 1 }, { color: "rot", name: "Risikofreudig", id: 2 }, { color: "blau", name: "Zurückhaltend", id: 4 }, { color: "grün", name: "Unterstützend", id: 3 }],
-            group8: [{ color: "blau", name: "Kritisch", id: 1 }, { color: "gelb", name: "Impulsiv", id: 2 }, { color: "grün", name: "Zuverlässig", id: 4 }, { color: "rot", name: "Zielorientiert", id: 3 }],
-            group9: [{ color: "gelb", name: "Gesellig", id: 1 }, { color: "grün", name: "Unauffällig", id: 2 }, { color: "rot", name: "Furchtlos", id: 4 }, { color: "blau", name: "Struckturiert", id: 3 }],
-            group10: [{ color: "rot", name: "Hardnäckig", id: 1 }, { color: "gelb", name: "Überzeugend", id: 2 }, { color: "blau", name: "Planend", id: 4 }, { color: "grün", name: "Vermittelnd", id: 3 }],
-
-        }
-    },
-    {
-        userID: "user2", prename: "Max", name: "Mustermann", email: "max.mustermann@mail.de", password: "jan2001",
-        team: "team2",
-        groups:
-        {
-        
-
-        }
-    },
 
 ]
 
@@ -66,7 +39,7 @@ app.post("/api/register", (req, res) => {
             groups:
             {
                 group1: [{ color: "gelb", name: "Optimistisch", id: 2 }, { color: "rot", name: "Selbstsicher", id: 1 }, { color: "blau", name: "Genau", id: 4 }, { color: "grün", name: "Harmonisch", id: 3 }],
-                group2: [{ color: "blau", name: "Nachdenken", id: 1 }, { color: "gelb", name: "Kontaktfreudig", id: 2 }, { color: "grün", name: "Zuhörend", id: 4 }, { color: "rot", name: "Wagemutig", id: 3 }],
+                group2: [{ color: "blau", name: "Nachdenkend", id: 1 }, { color: "gelb", name: "Kontaktfreudig", id: 2 }, { color: "grün", name: "Zuhörend", id: 4 }, { color: "rot", name: "Wagemutig", id: 3 }],
                 group3: [{ color: "grün", name: "Geduldig", id: 1 }, { color: "gelb", name: "Spontan", id: 2 }, { color: "rot", name: "Entscheidungsfreudig", id: 4 }, { color: "blau", name: "Kontrolliert", id: 3 }],
                 group4: [{ color: "rot", name: "Bestimmend", id: 1 }, { color: "blau", name: "Sorgfältig", id: 2 }, { color: "grün", name: "Teamfähig", id: 4 }, { color: "gelb", name: "Begeistert", id: 3 }],
                 group5: [{ color: "grün", name: "Vertrauensvoll", id: 1 }, { color: "blau", name: "Analytisch", id: 2 }, { color: "gelb", name: "Beliebt", id: 4 }, { color: "rot", name: "Kraftvoll", id: 3 }],
