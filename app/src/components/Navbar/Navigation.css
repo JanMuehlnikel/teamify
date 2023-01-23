@@ -1,18 +1,26 @@
 .navbar {
     background-color: #E6E6E6 !important;
 }
+
 .mid {
     transform: translateX(-50%);
     left: 50%;
     position: absolute;
     font-weight: bold;
-  }
+}
 
-#a-navbar{
+#a-navbar {
     font-weight: bold;
     font-size: larger;
 }
 
-.nav-link{
+.nav-link {
     color: black;
+}
+
+
+@media screen and (max-width: 950px) {
+    .nav1 {
+        height: 30px;
+    }
 }

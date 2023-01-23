@@ -52,24 +52,24 @@ function TeamResultPage() {
     return (
 
         <div class="container-fluid">
-            <div class="row">
-                <div class="col" id="col-info-1">
+            <div class="row rcon">
+                <div class="col" id="col-info-11">
                     <h2>Hier siehst du, wie du in das Team passt.</h2>
                 </div>
-                <div class="col" id="col-info-2">
+                <div class="col" id="col-info-22">
                     <h2>TeamID: <b>{teamName}</b></h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <div class="row" id="row-auspraegung">
-                        <h2>Rote Ausprägung - Dominant:</h2>
+                        <h2><a className="rot">Rote Ausprägung</a> - Dominant:</h2>
                         {getAuspraegung("rot")}
                     </div>
                 </div>
                 <div class="col">
                     <div class="row" id="row-auspraegung">
-                        <h2>Gelbe Ausprägung - Initiativ:</h2>
+                        <h2><a className="gelb">Gelbe Ausprägung</a> - Initiativ:</h2>
                         {getAuspraegung("gelb")}
                     </div>
                 </div>
@@ -77,13 +77,13 @@ function TeamResultPage() {
             <div class="row">
                 <div class="col">
                     <div class="row" id="row-auspraegung">
-                        <h2>Blaue Ausprägung - Gewissenhaft:</h2>
+                        <h2><a className="blau">Blaue Ausprägung</a> - Gewissenhaft:</h2>
                         {getAuspraegung("blau")}
                     </div>
                 </div>
                 <div class="col">
                     <div class="row" id="row-auspraegung">
-                        <h2>Grüne Ausprägung - Stetig:</h2>
+                        <h2><a className="grün">Grüne Ausprägung</a> - Stetig:</h2>
                         {getAuspraegung("grün")}
 
                     </div>

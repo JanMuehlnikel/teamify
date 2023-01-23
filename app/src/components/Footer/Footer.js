@@ -22,10 +22,8 @@ function Footer() {
         <div class="container-fluid con-green">
 
             <h2 class="h1-header">Teamify</h2>
-            <div class="row">
+            <div class="row r-foot">
   
-                <div class="col" />
-                <div class="col" />
                 <div class="col">
                     <button type="button" className="btn-navigate" onClick={() => navigate("/login")}>Log-In</button>
                 </div>
@@ -38,9 +36,6 @@ function Footer() {
                 <div class="col">
                     <button type="button" className="btn-navigate" onClick={() => navigate("/teamergebnis")}>Team-Ergebns</button>
                 </div>
-
-                <div class="col" />
-                <div class="col" />
             </div>
         </div>
     )

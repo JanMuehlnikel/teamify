@@ -78,9 +78,9 @@ function ErgebnisPage() {
         return (
 
             <div class="container-fluid">
-                <div class="row">
+                <div class="row r1 rowinfo1">
                     <div class="col" id="col-info-1">
-                        <h3>Erklärung:</h3>
+                        <h2>Erklärung:</h2>
                         <p>Jeder Block mit jeweils vier Adjektiven gehört einer Farbe an. Die Zahlen, die Du
                             eingetragen hast, werden addiert und der Farbe zugeordnet. Nun wird dieser entsprechende Wert auf einer Skala in einem Netzdiagramm
                             visualisiert.</p>

@@ -163,7 +163,7 @@ function TestPage() {
     return (
 
         <div class="container-fluid">
-            <div class="row">
+            <div class="row rowinfo1">
                 <div class="col col-6" id="col-info-1">
                     <h2 class="b">Wie es funktioniert:</h2>
                     <p>Sortiere die Adjektive so, dass das Adjektiv das Dich am besten beschreibt ganz oben steht. Diesem

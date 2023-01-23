@@ -20,3 +20,9 @@
     font-weight: bold;
     margin-bottom: 40px;
 }
+
+@media screen and (max-width: 800px) {
+    .r-foot{
+        font-size: 1vw !important;
+    }
+}
