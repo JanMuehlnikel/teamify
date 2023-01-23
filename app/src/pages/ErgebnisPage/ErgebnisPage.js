@@ -81,9 +81,9 @@ function ErgebnisPage() {
                 <div class="row r1 rowinfo1">
                     <div class="col" id="col-info-1">
                         <h2>Erklärung:</h2>
-                        <p>Jeder Block mit jeweils vier Adjektiven gehört einer Farbe an. Die Zahlen, die Du
-                            eingetragen hast, werden addiert und der Farbe zugeordnet. Nun wird dieser entsprechende Wert auf einer Skala in einem Netzdiagramm
-                            visualisiert.</p>
+                        <p>Jeder Block mit Adjektiven gehört einer Farbe an. Die Zahlen, die du
+                            ausgewählt hast, werden addiert und einer Farbe zugeordnet. Der höchste Wert der addierten Angaben einer Farbe entspricht deiner Persönlichkeit.
+                            Das Ergebnis findest du im Diagramm.</p>
                     </div>
                     <div class="col justify-content-center" id="col-info-2">
                         <div class="col justify-content-center">

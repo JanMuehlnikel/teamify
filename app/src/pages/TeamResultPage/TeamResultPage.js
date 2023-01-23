@@ -77,14 +77,14 @@ function TeamResultPage() {
             <div class="row">
                 <div class="col">
                     <div class="row" id="row-auspraegung">
-                        <h2><a className="blau">Blaue Ausprägung</a> - Gewissenhaft:</h2>
-                        {getAuspraegung("blau")}
+                    <h2><a className="grün">Grüne Ausprägung</a> - Stetig:</h2>
+                        {getAuspraegung("grün")}
                     </div>
                 </div>
                 <div class="col">
                     <div class="row" id="row-auspraegung">
-                        <h2><a className="grün">Grüne Ausprägung</a> - Stetig:</h2>
-                        {getAuspraegung("grün")}
+                    <h2><a className="blau">Blaue Ausprägung</a> - Gewissenhaft:</h2>
+                        {getAuspraegung("blau")}
 
                     </div>
                 </div>

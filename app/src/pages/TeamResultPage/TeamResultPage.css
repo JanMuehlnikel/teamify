@@ -108,16 +108,39 @@
 
 .rot{
     color: #ff0000;
+    text-decoration: none !important;
 }
 .gelb{
     color: #ffcc00;
+    text-decoration: none !important;
 }
 .blau{
     color: #003cff;
+    text-decoration: none !important;
 }
 .grün{
     color: #008b05;
+    text-decoration: none !important;
 }
+
+
+.rot:hover{
+    color: #ff0000;
+    text-decoration: none !important;
+}
+.gelb:hover{
+    color: #ffcc00;
+    text-decoration: none !important;
+}
+.blau:hover{
+    color: #003cff;
+    text-decoration: none !important;
+}
+.grün:hover{
+    color: #008b05;
+    text-decoration: none !important;
+}
+
 
 a:hover {
     background-color: none !important;

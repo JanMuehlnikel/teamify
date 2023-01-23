@@ -166,10 +166,8 @@ function TestPage() {
             <div class="row rowinfo1">
                 <div class="col col-6" id="col-info-1">
                     <h2 class="b">Wie es funktioniert:</h2>
-                    <p>Sortiere die Adjektive so, dass das Adjektiv das Dich am besten beschreibt ganz oben steht. Diesem
-                        Adjektiv gibst Du dann 4 Punkte. Dem Adjektiv, dass Dich am zweitbesten beschreibt navigierst Du
-                        mit den Pfeilen unter dem Ersten, diesem Adjektiv gibst Du dann 3 Punkte. Und so geht es immer
-                        weiter.</p>
+                    <p>Sortiere die Adjektive so, dass das Adjektiv das dich am besten beschreibt ganz oben steht. Die Adjektive werden dann von oben nach unten mit vier bis einem Punkt bewertet. 
+                        Jedes Adjektiv eines Kastens, ist mit einer anderen Persönlichkeit verbunden.</p>
                 </div>
                 <div class="col" id="col-info-2">
                     <h2 class="b">Gefällt dir der Test? <br />Empfehle uns weiter!</h2>

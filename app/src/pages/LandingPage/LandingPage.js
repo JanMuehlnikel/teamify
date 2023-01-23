@@ -29,7 +29,7 @@ function LandingPage() {
                         <h1 class="t1">Das perfekte Team gibt es nicht?<br /> Falsch!</h1>
 
                         <h2 class="t2">Durch unsere intelligenten Tools finden wir Ihr
-                            perfektes Team, das genau auf ihre Bedürfnisse
+                            perfektes Team, dass genau auf Ihre Bedürfnisse
                             angepasst ist.</h2>
 
                             {loggedIn == "true" ? 
@@ -47,7 +47,7 @@ function LandingPage() {
                         <div class="card-body">
                             <h5 class="card-title">Direkter Vergleich</h5>
                             <p class="card-text">Sie können Ihr Ergebnis direkt mit Ihren
-                                Teamkollegen vergleichen und somit das
+                                Teamkollegen vergleichen und so Ihr 
                                 perfekte Team finden.</p>
                         </div>
                     </div>
@@ -56,17 +56,15 @@ function LandingPage() {
                         <div class="card-body">
                             <h5 class="card-title">Direktes Ergebnis</h5>
                             <p class="card-text">Unsere Software wird Ihnen sofort ein
-                                Ergebnis präsentieren, dass Ihnen sofort
-                                einen Mehrwert bietet.</p>
+                                Ergebnis präsentieren und Sie in eine von vier Persönlichkeitskategorien einteilen.</p>
                         </div>
                     </div>
                     <div class="card">
                         <img class="card-img-top" src={pic3} />
                         <div class="card-body">
                             <h5 class="card-title">Jederzeit Wiederholbar</h5>
-                            <p class="card-text">Der Test kann jederzeit wiederholt
-                                werden, wenn Sie sich bei einigen
-                                Angaben unsicher sind..</p>
+                            <p class="card-text">Wenn Sie sich bei einigen
+                                Angaben unsicher sind, kann der Test jederzeit wiederholt werden.</p>
                         </div>
                     </div>
                 </div>
@@ -88,7 +86,7 @@ function LandingPage() {
                                         vergebene Punkte sind.
                                         Am Ende ergibt sich aus den
                                         Ziffern eine Summe aus der
-                                        ein Diagramm abgeleitet
+                                        das Ergebnis abgeleitet
                                         werden kann.
                                     </h3>
                                 </div>
